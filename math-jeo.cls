@@ -1,5 +1,14 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{math-jeo}[2022/11/15 personal preamble for lecture notes]
+\ProvidesClass{math-jeo}[2022/11/16 math-jeo.cls]
+
+\RequirePackage{etoolbox}
+\newbool{pfont}
+
+\DeclareOption{palatino}{%
+  % Set a boolean variable to be true in order to use palatino fonts below.
+  % Requires etoolbox.
+  \booltrue{pfont}
+}
 
 \DeclareOption{lecture}{%
   \newcommand{\class}{\textsc{Class 001-01}}
@@ -44,6 +53,13 @@
     amsmath,
     amssymb,
     amsthm
+    }
+
+  % Font settings for Palatino.
+    % If these are loaded before amssymb it causes an error
+    % see: https://tex.stackexchange.com/questions/564490/command-bbbk-already-defined-ol-bbbk-mathordamsb7c-when-i-try-t
+    \ifbool{pfont}{%
+      \RequirePackage{newpxtext, newpxmath}
     }
 
   % Packages for implementing basic notation, e.g., derivatives and paired delimiters
@@ -187,35 +203,36 @@
 %==========%
 %  MACROS  %
 %==========%
+  % Delimiters from mathtools
+    % \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+    \DeclarePairedDelimiter\set{\{}{\}}
+    \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+    \DeclarePairedDelimiter\parens{\lparen}{\rparen}
+    \DeclarePairedDelimiter\brackets{[}{]}
+    \DeclarePairedDelimiter\abrackets{\langle}{\rangle}
+    % \DeclarePairedDelimiter\norm{\|}{\|}
 
   % Miscellaneous symbols, functions, mathmode commands.
-  \newcommand{\RR}{\ensuremath{\mathbb{R}}}
-  \newcommand{\QQ}{\ensuremath{\mathbb{Q}}}
-  \newcommand{\NN}{\ensuremath{\mathbb{N}}}
-  \newcommand{\ZZ}{\ensuremath{\mathbb{Z}}}
-  \newcommand{\CC}{\ensuremath{\mathbb{C}}}
-  \newcommand{\ii}{\vb{\imath}}
-  \newcommand{\jj}{\vb{\jmath}}
-  \newcommand{\kk}{\vb{k}}
-    \newcommand{\icol}[1]{% inline column vector
-      \brackets*{\begin{smallmatrix}#1\end{smallmatrix}}%
-      }
-
-    \newcommand{\irow}[1]{% inline row vector
-      \begin{smallmatrix}[#1]\end{smallmatrix}%
-      }
-    % Inline vector... hopefully looks better than \irow.
+    \newcommand{\RR}{\ensuremath{\mathbb{R}}}
+    \newcommand{\QQ}{\ensuremath{\mathbb{Q}}}
+    \newcommand{\NN}{\ensuremath{\mathbb{N}}}
+    \newcommand{\ZZ}{\ensuremath{\mathbb{Z}}}
+    \newcommand{\CC}{\ensuremath{\mathbb{C}}}
+    \newcommand{\ii}{\vb{\imath}}
+    \newcommand{\jj}{\vb{\jmath}}
+    \newcommand{\kk}{\vb{k}}
     \newcommand{\ivec}[2][.8]{%
       \scalebox{#1}{%
         \renewcommand{\arraystretch}{.8}%
         $\begin{bmatrix}#2\end{bmatrix}$%
-        }
-        }
+      }
+    }
     % New emptyset symbol
     \let\oldemptyset\emptyset
     \let\emptyset\varnothing
 
   % SI unit commands
+    \sisetup{exponent-product = \cdot, per-mode = fraction}
     \let\DeclareUSUnit\DeclareSIUnit % These are for
     \let\US\SI                       % declaring imperial units
 
@@ -230,80 +247,37 @@
     \creflabelformat{ineq}{#2{\upshape(#1)}#3}
 
   % Theorem environments
-  \newtheorem{theorem}{Theorem}[section]
+    \newtheorem{theorem}{Theorem}[section]
 
-  \newtheorem{proposition}[theorem]{Proposition}
-  \newcommand{\propositionautorefname}{Proposition}
+    \newtheorem{proposition}[theorem]{Proposition}
+    \newcommand{\propositionautorefname}{Proposition}
 
-  \newtheorem{corollary}[theorem]{Corollary}
-  \newcommand{\corollaryautorefname}{Corollary}
+    \newtheorem{corollary}[theorem]{Corollary}
+    \newcommand{\corollaryautorefname}{Corollary}
 
-  \newtheorem{lemma}[theorem]{Lemma}
-  \newcommand{\lemmaautorefname}{Lemma}
+    \newtheorem{lemma}[theorem]{Lemma}
+    \newcommand{\lemmaautorefname}{Lemma}
 
-  \theoremstyle{definition}
-      % Following environments should be nonitalicized.
-      \newtheorem{definition}[theorem]{Definition}
-      \newcommand{\definitionautorefname}{Definition}
+  % Following environments should be nonitalicized.
+    \theoremstyle{definition}
+    \newtheorem{definition}[theorem]{Definition}
+    \newcommand{\definitionautorefname}{Definition}
 
-      \newtheorem{remark}[theorem]{Remark}
-      \newcommand{\remarkautorefname}{Remark}
+    \newtheorem{remark}[theorem]{Remark}
+    \newcommand{\remarkautorefname}{Remark}
 
-      \newtheorem{fact}{Fact}
+    \newtheorem{fact}{Fact}
 
-      \newtheorem{algorithm}[theorem]{Algorithm}
-      \newcommand{\algoritheoremautorefname}{Algorithm}
+    \newtheorem{algorithm}[theorem]{Algorithm}
+    \newcommand{\algoritheoremautorefname}{Algorithm}
 
-      \newtheorem{example}[theorem]{Example}
-      \newcommand{\exampleautorefname}{Example}
+    \newtheorem{example}[theorem]{Example}
+    \newcommand{\exampleautorefname}{Example}
 
-    % Defines pointbox for exams.
+  % Defines pointbox for exams.
     \newcommand{\pointbox}{\fbox{Points:$\phantom{\bigg]}$\makebox[.75cm]{}/\pointsonpage{\thepage}}}
 
 %==========================================%
 %           DOCUMENT INFORMATION           %
 %==========================================%
   \pointsinmargin
-
-  % \DeclareOption{lecture}{%
-  %   \newcommand{\class}{\textsc{Class 001-01}}
-  %   \newcommand{\term}{\textsc{Fall 20xx}}
-  %   \newcommand{\chapter}{\textsc{Chapter X}}
-  %   \newcommand{\topic}{\textsc{Awesome Math}}
-  %   \AtBeginDocument{%
-  %       % These commands set up the running header on the top of the exam pages
-  %       \pagestyle{headandfoot}
-  %       \header{\class}{\textsc{Notes for} \chapter\ - \textsc{Page} \thepage\ \textsc{of} \numpages}{\topic}
-  %       % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-  %       \headrule
-  %       \extraheadheight{.5cm}
-  %       }}
-
-  % \DeclareOption{exam}{%
-  %   \newcommand{\class}{\textsc{CLASS 001-01}}
-  %   \newcommand{\term}{\textsc{FALL 20XX}}
-  %   \newcommand{\examnum}{\textsc{Test X}}
-  %   \newcommand{\examdate}{\textsc{DECEMBER 31, 1999}}
-  %   \pointsinmargin
-  %   \AtBeginDocument{%
-  %       % These commands set up the running header on the top of the exam pages
-  %       \pagestyle{headandfoot}
-  %       \header{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
-  %       \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-  %       \headrule
-  %       \extraheadheight{.5cm}
-  %       }}
-
-
-%=======================================%
-%           AT BEGIN DOCUMENT           %
-%=======================================%
-    % Code to run at beginning of document
-        % \AtBeginDocument{%
-        %     % These commands set up the running header on the top of the exam pages
-        %     \pagestyle{headandfoot}
-        %     \header{\class}{\textsc{Notes for} \chapter\ - \textsc{Page} \thepage\ \textsc{of} \numpages}{\topic}
-        %     % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-        %     \headrule
-        %     \extraheadheight{.5cm}
-        %     }

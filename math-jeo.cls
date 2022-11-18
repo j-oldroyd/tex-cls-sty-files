@@ -8,16 +8,20 @@
 %           User provided inputs           %
 %==========================================%
   % Adapated from discussion at https://tex.stackexchange.com/questions/97881/how-to-make-an-automatic-title-head-in-my-own-class-but-with-some-user-definable
-  \newcommand{\@course}{}
-  \newcommand{\course}[1]{\gdef\@course{#1}}
-  \newcommand{\@bookchapter}{}
-  \newcommand{\bookchapter}[1]{\gdef\@bookchapter{#1}}
-  \newcommand{\@chaptertopic}{}
-  \newcommand{\chaptertopic}[1]{\gdef\@chaptertopic{#1}}
+    \newcommand{\@course}{}
+    \newcommand{\course}[1]{\gdef\@course{#1}}
+    \newcommand{\@bookchapter}{}
+    \newcommand{\bookchapter}[1]{\gdef\@bookchapter{#1}}
+    \newcommand{\@chaptertopic}{}
+    \newcommand{\chaptertopic}[1]{\gdef\@chaptertopic{#1}}
+    \newcommand{\@examnum}{}
+    \newcommand{\examnum}[1]{\gdef\@examnum{#1}}
+    \newcommand{\@examdate}{}
+    \newcommand{\examdate}[1]{\gdef\@examdate{#1}}
   % provide error messages if document info commands haven't been defined in preamble
-  \newcommand{\mycls@headerror}{%
-      \ClassError{math-jeo}{This command must be in the preamble}{...}%
-  }
+    \newcommand{\mycls@headerror}{%
+        \ClassError{math-jeo}{This command must be in the preamble}{...}%
+    }
 
 %===========================================%
 %           Specify class options           %
@@ -47,18 +51,27 @@
   % Used for homework and exams.
     \DeclareOption{exam}{%
       \PassOptionsToClass{addpoints}{exam}
-      \newcommand{\class}{\textsc{CLASS 001-01}}
-      \newcommand{\term}{\textsc{FALL 20XX}}
-      \newcommand{\examnum}{\textsc{Test X}}
-      \newcommand{\examdate}{\textsc{DECEMBER 31, 1999}}
       \AtBeginDocument{%
-          % These commands set up the running header on the top of the exam pages
           \pagestyle{headandfoot}
-          \header{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
-          \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
           \headrule
+          % These commands set up the header for the cover page(s)
+          \coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
+          % \firstpageheadrule
+          % These commands set up the running header on the top of the main exam pages
+          % \header{\textsc{\@course}}{\textsc{\@examnum}\ - Page \thepage\ of \numpages}{\textsc{\@examdate}}
+          \chead{\textsc{\@examnum}\ Page \thepage\ of \numpages}
+          \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+          % \headrule
           \extraheadheight{.5cm}
-          }}
+          % Check to see if document info commands are given after preamble
+          % Uses \mycls@headerror to provide error message
+          \let\course\mycls@headerror
+          \let\examnum\mycls@headerror
+          \let\examdate\mycls@headerror
+      }
+    }
+  % Assume all other options are sent to exam class
+    \DeclareOption*{\PassOptionsToClass{\CurrentOption}{exam}}
   \ProcessOptions\relax
 
 % My setup for using exam class

@@ -53,15 +53,16 @@
       \PassOptionsToClass{addpoints}{exam}
       \AtBeginDocument{%
           \pagestyle{headandfoot}
+          % Allow horizontal rule under header for coverpage and main pages
+          \coverheadrule
           \headrule
           % These commands set up the header for the cover page(s)
           \coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
           % \firstpageheadrule
           % These commands set up the running header on the top of the main exam pages
-          % \header{\textsc{\@course}}{\textsc{\@examnum}\ - Page \thepage\ of \numpages}{\textsc{\@examdate}}
-          \chead{\textsc{\@examnum}\ Page \thepage\ of \numpages}
+          % Headers and footers make use of \oddeven to get page number and point box to appear on outside of page
+          \header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
           \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-          % \headrule
           \extraheadheight{.5cm}
           % Check to see if document info commands are given after preamble
           % Uses \mycls@headerror to provide error message

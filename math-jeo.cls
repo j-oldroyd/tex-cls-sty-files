@@ -60,6 +60,7 @@
     % see: https://tex.stackexchange.com/questions/564490/command-bbbk-already-defined-ol-bbbk-mathordamsb7c-when-i-try-t
     \ifbool{pfont}{%
       \RequirePackage{newpxtext, newpxmath}
+      \RequirePackage[tracking=smallcaps,protrusion=true,expansion=false,verbose=silent]{microtype}
     }
 
   % Packages for implementing basic notation, e.g., derivatives and paired delimiters

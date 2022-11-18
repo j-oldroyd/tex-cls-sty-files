@@ -1,5 +1,7 @@
+% This class file is a slightly modifed version of the UIdaho thesis template
+% provided by COGS, oringally accessed in 2015.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mythesis}[2010/08/04]
+\ProvidesClass{mythesis}[2022/11/18 mythesis.cls]
 
 \RequirePackage{setspace}
 
@@ -114,16 +116,7 @@
   \textspacing
   \appendix
   \renewcommand\thechapter{\textsc{\alph{chapter}}}
-  % More of CoGS proprietry blend of insanity and pedantry; despite
-  % not being mentioned in the guidelines, the Appendices need
-  % prefixing with "Appendix", though apparently it's OK if we just
-  % put a phantom element in.  The justification for this is, and I
-  % quote:
-  %   "Please include an "Appendix" entry above your appendices in
-  %   your table of contents so the reader doesn't have to guess what
-  %   they are."
-  % People might be "surprised"; CoGS does not expect theses to be
-  % read by very intelligent people, which might reflect more on them.
+  % This adds an "Appendix" in the TOC.
   \phantomsection
   \addcontentsline{toc}{chapter}{Appendices}
    \fancyhead[RO,RE]{\footnotesize\thepage}}
@@ -223,18 +216,14 @@
 % The entire toc situation is a bit of a pain, and could be nicer to
 % rewrite.
 
-% CoGS wants each line of the ToC/LoT/LoF to have dotted leaders
-% (chapters don't by default, as this looks ugly).  I've gone for
-% less-frequent dots here, as it looks somewhat nicer.
+% Dotted leaders for TOC
 \RequirePackage{titletoc}
 \titlecontents{chapter}[0pt]%
 {\addvspace{.7pc}}{\sc\makebox[0pt][r]{\thecontentslabel\enspace}}%
 {\sc}{\titlerule*[1pc]{.}\contentspage}
 
-% Prefix list of figures/tables with "Figure" and Table", as per CoGS
-% request, in case people get confused about what they might find in a
-% list of figures/tables.  Both of the labels should comfortably fit
-% into 5.5em.  There is a case that the tables should be srunk down to
+% Prefix list of figures/tables with "Figure" and Table"
+% Both of the labels should comfortably fit into 5.5em.
 
 \titlecontents{figure}[5.5em]{}{%
   \makebox[0pt][l]{\hspace*{-5.5em}\sc Figure \thecontentslabel\enspace}}%
@@ -251,17 +240,15 @@
 \RequirePackage{numname}
 
 
-% \titleformat{\chapter}[display]%
-% {\relax}{\flushright\spacedsmallcaps{\chaptertitlename{} \thechapter}}{0pt}%
-% {\onehalfspacing\raggedright\large\spacedsmallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
+\titleformat{\chapter}[display]%
+{\relax}{\flushright\spacedsmallcaps{\chaptertitlename{} \thechapter}}{0pt}%
+{\onehalfspacing\raggedright\large\spacedsmallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
 
 % The code above sets the "chapter" marker flush right, which looks
-% nice.  However, CoGS, in their pedantic insanity have decreed that
-% is not OK (despite this not being mentioned anywhere).
-% Administrators gone mad!
-\titleformat{\chapter}[display]%
-{\relax}{\flushleft\spacedsmallcaps{\chaptertitlename{} \thechapter}}{3pt}%
-{\onehalfspacing\raggedright\large\spacedsmallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
+% nice.
+% \titleformat{\chapter}[display]%
+% {\relax}{\flushleft\spacedsmallcaps{\chaptertitlename{} \thechapter}}{3pt}%
+% {\onehalfspacing\raggedright\large\spacedsmallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
 
 
 % Can't get spaced sc here

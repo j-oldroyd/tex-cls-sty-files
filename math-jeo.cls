@@ -1,44 +1,65 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{math-jeo}[2022/11/16 math-jeo.cls]
+\ProvidesClass{math-jeo}[2022/11/18 math-jeo.cls]
 
 \RequirePackage{etoolbox}
 \newbool{pfont}
 
-\DeclareOption{palatino}{%
+%==========================================%
+%           User provided inputs           %
+%==========================================%
+  % Adapated from discussion at https://tex.stackexchange.com/questions/97881/how-to-make-an-automatic-title-head-in-my-own-class-but-with-some-user-definable
+  \newcommand{\@course}{}
+  \newcommand{\course}[1]{\gdef\@course{#1}}
+  \newcommand{\@bookchapter}{}
+  \newcommand{\bookchapter}[1]{\gdef\@bookchapter{#1}}
+  \newcommand{\@chaptertopic}{}
+  \newcommand{\chaptertopic}[1]{\gdef\@chaptertopic{#1}}
+  % provide error messages if document info commands haven't been defined in preamble
+  \newcommand{\mycls@headerror}{%
+      \ClassError{math-jeo}{This command must be in the preamble}{...}%
+  }
+
+%===========================================%
+%           Specify class options           %
+%===========================================%
   % Set a boolean variable to be true in order to use palatino fonts below.
   % Requires etoolbox.
-  \booltrue{pfont}
-}
+  \DeclareOption{palatino}{%
+    \booltrue{pfont}
+  }
 
-\DeclareOption{lecture}{%
-  \newcommand{\class}{\textsc{Class 001-01}}
-  \newcommand{\term}{\textsc{Fall 20xx}}
-  \newcommand{\chapter}{\textsc{Chapter X}}
-  \newcommand{\topic}{\textsc{Awesome Math}}
-  \AtBeginDocument{%
-      % These commands set up the running header on the top of the exam pages
-      \pagestyle{headandfoot}
-      \header{\textsc{\class}}{\textsc{\chapter}}{\textsc{\topic}}
-      % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-      \headrule
-      \extraheadheight{.5cm}
-      }}
-
-\DeclareOption{exam}{%
-  \PassOptionsToClass{addpoints}{exam}
-  \newcommand{\class}{\textsc{CLASS 001-01}}
-  \newcommand{\term}{\textsc{FALL 20XX}}
-  \newcommand{\examnum}{\textsc{Test X}}
-  \newcommand{\examdate}{\textsc{DECEMBER 31, 1999}}
-  \AtBeginDocument{%
-      % These commands set up the running header on the top of the exam pages
-      \pagestyle{headandfoot}
-      \header{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
-      \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-      \headrule
-      \extraheadheight{.5cm}
-      }}
-\ProcessOptions\relax
+  % Used for lecture notes.
+    \DeclareOption{lecture}{%
+      \AtBeginDocument{%
+        % These commands set up the running header on the top of the exam pages
+        \pagestyle{headandfoot}
+        \header{\textsc{\@course}}{\textsc{\@bookchapter}}{\textsc{\@chaptertopic}}
+        % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+        \headrule
+        \extraheadheight{.5cm}
+        % Check to see if document info commands are given after preamble
+        % Uses \mycls@headerror to provide error message
+        \let\course\mycls@headerror
+        \let\bookchapter\mycls@headerror
+        \let\chaptertopic\mycls@headerror
+      }
+    }
+  % Used for homework and exams.
+    \DeclareOption{exam}{%
+      \PassOptionsToClass{addpoints}{exam}
+      \newcommand{\class}{\textsc{CLASS 001-01}}
+      \newcommand{\term}{\textsc{FALL 20XX}}
+      \newcommand{\examnum}{\textsc{Test X}}
+      \newcommand{\examdate}{\textsc{DECEMBER 31, 1999}}
+      \AtBeginDocument{%
+          % These commands set up the running header on the top of the exam pages
+          \pagestyle{headandfoot}
+          \header{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+          \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+          \headrule
+          \extraheadheight{.5cm}
+          }}
+  \ProcessOptions\relax
 
 % My setup for using exam class
 \LoadClass[twoside]{exam}

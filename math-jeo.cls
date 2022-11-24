@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{math-jeo}[2022/11/18 math-jeo.cls]
+\ProvidesClass{math-jeo}[2022/11/22 math-jeo.cls]
 
 \RequirePackage{etoolbox}
 \newbool{pfont}

@@ -38,21 +38,12 @@
 %% PAGE LAYOUT
 \RequirePackage[top=2.54cm, bottom=2.54cm, left=3.05cm, right=2.54cm]{geometry}
 
-% NOTE: I am a big fan of Minion Pro, especially for small caps.
-% However, installing it is a pain:
-%   https://gist.github.com/richfitz/2324707
-% So this switches between Minion Pro and Palatino, which at least
-% looks substantially nicer than Computer Modern.
-\IfFileExists{MinionPro.sty}{
-\RequirePackage{MnSymbol}
-\RequirePackage[mathlf,minionint]{MinionPro} % consider opticals?
-\RequirePackage[protrusion=true,expansion=false,verbose=silent]{microtype}
-}{
+% Make use of Palatino fonts for text/math
 \RequirePackage[osf]{mathpazo}
 \def\textssc{\textsc}
 \def\sscshape{\scshape}
 \RequirePackage[tracking=smallcaps,protrusion=true,expansion=false,verbose=silent]{microtype}
-}
+
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage{textcomp}

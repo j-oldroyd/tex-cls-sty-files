@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{math-jeo}[2022/11/22 math-jeo.cls]
+\ProvidesClass{math-jeo}[2022/12/06 math-jeo.cls]
 
 \RequirePackage{etoolbox}
 \newbool{pfont}
@@ -48,7 +48,31 @@
         \let\chaptertopic\mycls@headerror
       }
     }
-  % Used for homework and exams.
+  % Used for homework.
+    \DeclareOption{homework}{%
+      \PassOptionsToClass{addpoints}{exam}
+      \AtBeginDocument{%
+          \pagestyle{headandfoot}
+          % Allow horizontal rule under header for coverpage and main pages
+          \coverheadrule
+          \headrule
+          % These commands set up the header for the cover page(s)
+          \coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
+          % \firstpageheadrule
+          % These commands set up the running header on the top of the main exam pages
+          % Headers and footers make use of \oddeven to get page number to appear on outside of page
+          \header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
+          % Clear footer
+          \footer{}{}{}
+          \extraheadheight{.5cm}
+          % Check to see if document info commands are given after preamble
+          % Uses \mycls@headerror to provide error message
+          \let\course\mycls@headerror
+          \let\examnum\mycls@headerror
+          \let\examdate\mycls@headerror
+      }
+    }
+  % Used for exams.
     \DeclareOption{exam}{%
       \PassOptionsToClass{addpoints}{exam}
       \AtBeginDocument{%

@@ -1,0 +1,321 @@
+\documentclass{ajss}
+
+\addbibresource{ajss-bib.bib}
+
+% \usepackage{titling}
+
+% \setlength{\droptitle}{-3.5em}
+% \posttitle{\end{center}\vspace{-5em}}
+
+% \renewcommand{\labelnamepunct}{\addspace} % removes period after year
+% \DeclareFieldFormat{pages}{#1} %removes "pp." from citations
+
+% \usepackage{hyperref}
+% \usepackage{xcolor}
+% formatting for citations
+% \renewbibmacro*{publisher+location+date}{%
+%   \ifentrytype{book}
+%     {\printlist{publisher}%
+%      \iflistundef{location}
+%        {\setunit*{\addcomma\space}}
+%        {\setunit*{\addcomma\space}}%
+%      \printlist{location}}
+%     {\printlist{location}%
+%      \iflistundef{publisher}
+%       {\setunit*{\addcomma\space}}
+%       {\setunit*{\addcolon\space}}%
+%      \printlist{publisher}}
+%   \setunit*{\addcomma\space}%
+%   \usebibmacro{date}%
+%   \newunit}
+
+% % formatting for citations
+% \renewbibmacro*{publisher+location+date}{%
+%   \ifentrytype{book}
+%     {\printlist{publisher}%
+%      \iflistundef{location}
+%        {\setunit*{\addcomma\space}}
+%        {\setunit*{\addcomma\space}}%
+%      \printlist{location}}
+%     {\ifentrytype{inbook}
+%     {\printlist{publisher}%
+%      \iflistundef{location}
+%        {\setunit*{\addcomma\space}}
+%        {\setunit*{\addcomma\space}}%
+%      \printlist{location}}
+%     {\printlist{location}%
+%      \iflistundef{publisher}
+%       {\setunit*{\addcomma\space}}
+%       {\setunit*{\addcolon\space}}%
+%      \printlist{publisher}}}
+%   \setunit*{\addcomma\space}%
+%   \usebibmacro{date}%
+%   \newunit}
+
+% % formatting for editors
+% % Put editor string in parentheses
+% \DeclareFieldFormat{editortype}{\mkbibparens{#1}}
+
+% % Like editor+others but without comma before editor string and dash checks
+% \DefineBibliographyStrings{english}{%
+%   editor           = {Ed.},
+%   editors          = {Eds.},
+% }
+
+% % change order of editor name
+% \DeclareNameAlias{editor}{last-first}
+
+% \newbibmacro*{ineditor+others}{%
+%   \ifboolexpr{ test \ifuseeditor and not test {\ifnameundef{editor}} }
+%     % {\printnames{editor}%
+%     %  \setunit{\addspace}%
+%      {\printtext[parens]{\printnames{editor}\setunit*{\addcomma\addspace}\bibstring{editor}}%
+%      \clearname{editor}}
+%     {}}
+
+% \DeclareFieldFormat{editortype}{\mkbibparens{#1}}
+% \DeclareDelimFormat{editortypedelim}{\addspace}
+
+% formatting for citations
+% \renewbibmacro*{maintitle+booktitle}{%
+%   \iffieldundef{maintitle}
+%     {}
+%     {\usebibmacro{maintitle}%
+%      \newunit\newblock
+%      \printtext{\bibstring{seenote}}
+%      \iffieldundef{volume}
+%        {}
+%        {\printfield{volume}%
+%         \printfield{part}%
+%         \setunit{\addcomma\space}}}%
+%   \usebibmacro{booktitle}%
+%   \newunit}
+
+% % remove quotes from titles in citations and in bibliography for @inbook
+% \DeclareFieldFormat[inbook]{citetitle}{#1}
+% \DeclareFieldFormat[inbook]{title}{#1}
+
+% \NewBibliographyString{in}
+% \DefineBibliographyStrings{english}{
+%    in           = {in}
+% }
+
+% \DeclareFieldFormat[inbook]{title}{#1\nopunct} % no period after title
+
+% \DeclareBibliographyDriver{inbook}{%
+%   \usebibmacro{bibindex}%
+%   \usebibmacro{begentry}%
+%   \usebibmacro{author/translator+others}%
+%   \setunit{\printdelim{nametitledelim}}\newblock
+%   \usebibmacro{title}%
+%   \setunit*{\addspace}
+%   \printtext{\bibstring{in}}
+%   \usebibmacro{maintitle+booktitle}%
+%   % \newunit\newblock
+%   \printunit{\addcomma\space}
+%   \usebibmacro{ineditor+others}%
+%   % \newunit\newblock
+%   \printunit{\addcomma\space}
+%   \printfield{edition}%
+%   \newunit
+%   \usebibmacro{chapter+pages}%
+%   % \newunit\newblock
+%   \printunit{\addcomma\space}
+%   \iffieldundef{maintitle}
+%     {\printfield{volume}%
+%      \printfield{part}}
+%     {}%
+%   \newunit
+%   \printfield{volumes}%
+%   \newunit\newblock
+%   \usebibmacro{series+number}%
+%   \newunit\newblock
+%   \printfield{note}%
+%   \newunit\newblock
+%   \usebibmacro{publisher+location+date}%
+%   % \newunit\newblock
+%   % \usebibmacro{chapter+pages}%
+%   % \newunit\newblock
+%   \iftoggle{bbx:isbn}
+%     {\printfield{isbn}}
+%     {}%
+%   \newunit\newblock
+%   \usebibmacro{doi+eprint+url}%
+%   \newunit\newblock
+%   \usebibmacro{addendum+pubstate}%
+%   \setunit{\bibpagerefpunct}\newblock
+%   \usebibmacro{pageref}%
+%   \newunit\newblock
+%   \iftoggle{bbx:related}
+%     {\usebibmacro{related:init}%
+%      \usebibmacro{related}}
+%     {}%
+%   \usebibmacro{finentry}}
+
+
+% \DeclareFieldFormat{doi}{%
+%   \ifhyperref
+%     {\href{https://doi.org/#1}{\nolinkurl{#1}}}
+%     {\nolinkurl{#1}}}
+
+% \renewcommand\UrlFont{\rmfamily\itshape}
+
+% \DeclareFieldFormat[online]{title}{#1}
+
+% \newbibmacro*{mywebsite}{%
+%       \ifboolexpr{ test \ifuseeditor and not test {\ifnameundef{editor}} }
+%         % {\printnames{editor}%
+%         %  \setunit{\addspace}%
+%          {\printtext{\printnames{editor}\setunit{\adddot\addspace}\printlist{url}}%
+%          \clearname{editor}}
+%         {}}
+
+% \DefineBibliographyStrings{english}{%
+%     urlseen = {accessed}
+% }
+% \DeclareFieldFormat{urldate}{\mkbibparens{\bibstring{urlseen}\space\printfield{month}\space\printfield{year}}}
+
+% \DeclareFieldFormat{url}{%
+%       \ifhyperref
+%         {\href{#1}{\color{blue}{#1}}}
+%         {\nolinkurl{#1}}}
+
+% \DeclareBibliographyDriver{online}{%
+%     \usebibmacro{bibindex}%
+%     \usebibmacro{begentry}%
+%     % \usebibmacro{author}%
+%     \setunit{\labelnamepunct}\newblock
+%     \usebibmacro{title}%
+%     \setunit{\addcomma\addspace}\newblock
+%     \printlist{organization}
+%     \newunit\newblock
+%     \usebibmacro{mywebsite}
+%     \newunit\newblock
+%     \usebibmacro{url}
+%     \usebibmacro{urldate}
+%     \newunit\newblock
+%     % \printlist{language}%
+%     % \newunit\newblock
+%     % \usebibmacro{byauthor}%
+%     % \newunit\newblock
+%     % \usebibmacro{bytranslator+others}%
+%     % \newunit\newblock
+%     % \usebibmacro{in:}%
+%     % \iffieldundef{crossref}
+%     %   {\usebibmacro{crossref:full}}
+%     %   {\usebibmacro{crossref:labelbookinbook}}%
+%     % \newunit\newblock
+%     % \usebibmacro{chapter+pages}%
+%     % \iffieldundef{crossref}
+%     %   {\usebibmacro{crossref:extrainfo}}
+%     %   {}%
+%     % \setunit{\bibpagerefpunct}\newblock
+%     % \usebibmacro{pageref}%
+%     \usebibmacro{finentry}}
+
+\begin{document}
+
+\title{\textbf{\fontsize{16pt}{16pt}\selectfont Style Guidelines}}
+\date{}
+\maketitle
+
+\begin{center}
+  \textbf{\textit{Please read these guidelines carefully before editing your manuscript.}}
+
+  \textbf{\textit{All submitted manuscripts must adhere strictly to the AJSS style guidelines. Failure to do so
+will result in editorial rejection of the manuscript.}}
+\end{center}
+\vspace{2\baselineskip}
+
+\textbf{Font}: Times New Roman, 12-point.
+
+\textbf{Margins}: 1'' on all sides (Normal setting in Microsoft Word)
+
+\textbf{Text formatting}:
+
+This is how your text should be formatted. Single space all text with a 12-point space in between
+each paragraph. Do not indent paragraphs. Do not include page numbers. Always use one space
+after a period, never two.
+
+Numbers one through ten used in the text should always be spelled out, as should all numbers
+that begin a sentence. One hundred percent of the time you should spell out a number when it
+begins a sentence, whereas numbers 11 and higher anywhere else in a sentence should use
+numerals. Always use numerals when referring to tables, figures, equations, etc. (example: Table
+1).
+
+Write out the word percent when used in text, and use the percent symbol (%) when used in
+tables or figures.
+
+In the manuscript, tables and figures should be included at the end of the text, after the
+concluding paragraph. In text, indicate approximate location of tables and figures by noting:
+
+[Table 1 about here]
+
+Tables and figures should be always be mentioned to in the text when you are referring to
+information from those tables and figures. For example: “Fifteen percent of Hogwart’s graduates
+reported they were unable to find work in a magical occupation within five years of graduation
+(see table 1).”
+
+Number your tables, figures, and equations sequentially as they are referenced in the text: Table
+1, Equation 1, Figure 1, etc.
+
+Reaction schemes and mathematical equations should be included in the text, centered, not
+wrapped, with one 12-point space above and below. 
+
+\textbf{References}:
+
+Use the Endnotes function in Word to mark in-text citations.
+Citations should be sequentially numbered in text with superscripted Arabic numerals, with outside punctuation, like this\footcite{Snape2009}.
+
+References will be listed at the end of the document; use size 10, Times New Roman font.
+Do not indent or space in between citations in the reference list.
+
+Use general citation format of:
+
+Author Last Name, Author First Initial. (Year) Publication Title, Source Information. Source location.
+
+For books, book name is italicized.
+For articles, journal name is italicized.
+When using page numbers, use full numbers with no space before or after hyphen mark (example: 125-129 \textit{not} 125 -- 9).
+DOI should always be provided, unless unavailable.
+
+Use the full citation the first time the source is cited.
+If a source is cited multiple times, you may use only the author Last Name (Year), pg.\ number [if applicable] and reference to original note.
+See this example below\footcite{Snape2009}.
+
+Examples for a book, book chapter, article, and website are provided below.
+
+\textit{Book}:
+
+\fullcite{Bagshot1954}.
+
+\textit{Book chapter}:
+
+\fullcite{Trelawney2004}.
+
+\textit{Article}:
+
+\fullcite{Snape2009}
+
+\textit{Website}:
+
+\fullcite{SpellResearch}
+
+\href{www.lol.com}{\color{blue}{LOL}} 
+
+\textbf{Blinded manuscript}:
+Remove all information that would identify the author and co-authors. The reviewers should not be able to identify the authors. Make note where self-referential information has been blinded.
+This information will be added back in during the final editing process.
+\section*{ABSTRact}
+lol? LOL
+
+\section*{LITERATURE review}
+lol\footcite{Snape2009}
+
+\newpage
+
+LOL\newline lol\par LOL
+
+\theendnotes
+% \printbibliography
+\end{document}

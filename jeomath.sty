@@ -1,11 +1,15 @@
 %% Provides basic packages/macros for lecture notes and exams/assignments.
 %% Lecture notes and assessments are currently set up to use math-jeo.cls.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{jeomath}[2022/11/22 jeomath.sty]
+\ProvidesPackage{jeomath}[2023/02/13 jeomath.sty]
 
 %=========================%
 %  PACKAGES AND SETTINGS  %
 %=========================%
+  % Graphics packages
+    \RequirePackage{%
+    graphicx
+    }
 
   % AMS packages
     \RequirePackage{%
@@ -24,7 +28,8 @@
   % TikZ packages and settings
     \RequirePackage{%
     tikz,
-    pgfplots
+    pgfplots,
+    circuitikz
     }
     \usetikzlibrary{%
     angles,
@@ -127,20 +132,21 @@
         }
 
   % Improvements to tables and lists
-  \RequirePackage{booktabs}
-  \RequirePackage[shortlabels]{enumitem}
+    \RequirePackage{booktabs}
+    \RequirePackage[shortlabels]{enumitem}
 
   % hyperref, cleverref and setup
-  \RequirePackage{hyperref}
-    \hypersetup{%
-        colorlinks=true, % links are colored
-        urlcolor=blue, % url/email color
-        linkcolor=magenta % interdocument link color
-        }
-    \RequirePackage[capitalize,noabbrev]{cleveref} % hyperref and cleveref are used for autoref to work the way I want it to.
+    \RequirePackage{hyperref}
+      \hypersetup{%
+          colorlinks=true, % links are colored
+          urlcolor=blue, % url/email color
+          linkcolor=magenta % interdocument link color
+          }
+    % hyperref and cleveref are used for autoref to work the way I want it to.
+    \RequirePackage[capitalize,noabbrev]{cleveref}
 
   % Get blank line between paragraphs.
-  \RequirePackage[parfill]{parskip}
+    \RequirePackage[parfill]{parskip}
 
   % Miscellaneous
     \RequirePackage{%
@@ -149,9 +155,27 @@
     bm,
     pdfpages,
     matlab-prettifier,
+    epsdice,
+    }
+
+    % We need to avoid a conflict between asymptote.sty and xelatex when
+    % running pst-poker.
+    % See egreg's answer here: https://tex.stackexchange.com/questions/673660/possible-conflict-between-pst-poker-and-asymptote-packages/675143#675143
+    \makeatletter
+    \let\Ginclude@eps@orig\Ginclude@eps
+    \makeatother
+
+    \RequirePackage{%
     asymptote,
     }
 
+    \makeatletter
+    \let\Ginclude@eps\Ginclude@eps@orig
+    \makeatother
+
+    \RequirePackage{%
+    pst-poker,
+    }
 %==========%
 %  MACROS  %
 %==========%
@@ -179,9 +203,13 @@
         $\begin{bmatrix}#2\end{bmatrix}$%
       }
     }
+
     % New emptyset symbol
     \let\oldemptyset\emptyset
     \let\emptyset\varnothing
+
+    % Typeset dice using epsdice package
+    \newcommand\vcdice[1]{\vcenter{\hbox{\epsdice{#1}}}}
 
   % Text mode commands
     \newcommand{\exersec}[2]{Exercise #1 in Section #2}

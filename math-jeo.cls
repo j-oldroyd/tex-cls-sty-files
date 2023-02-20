@@ -1,8 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{math-jeo}[2022/12/06 math-jeo.cls]
+\ProvidesClass{math-jeo}[2023/02/20 math-jeo.cls]
 
 \RequirePackage{etoolbox}
 \newbool{pfont}
+\newbool{pfontXTX}
 
 %==========================================%
 %           User provided inputs           %
@@ -30,6 +31,10 @@
   % Requires etoolbox.
   \DeclareOption{palatino}{%
     \booltrue{pfont}
+  }
+
+  \DeclareOption{palatinoXTX}{%
+    \booltrue{pfontXTX}
   }
 
   % Used for lecture notes.
@@ -114,6 +119,11 @@
     \ifbool{pfont}{%
       \RequirePackage{newpxtext, newpxmath}
       \RequirePackage[tracking=smallcaps,protrusion=true,expansion=false,verbose=silent]{microtype}
+    }
+
+    % We also need to ignore microtype if using XeLaTeX, so add an option for this.
+    \ifbool{pfontXTX}{%
+      \RequirePackage{newpxtext, newpxmath}
     }
 
 %==========================================%

@@ -21,7 +21,7 @@
     \newcommand{\examdate}[1]{\gdef\@examdate{#1}}
   % provide error messages if document info commands haven't been defined in preamble
     \newcommand{\mycls@headerror}{%
-        \ClassError{math-jeo}{This command must be in the preamble}{...}%
+        \ClassError{wvwcdocs}{This command must be in the preamble}{...}%
     }
 
 %===========================================%
@@ -111,7 +111,7 @@
 %  PACKAGES AND SETTINGS  %
 %=========================%
   % Load personal defaults
-    \RequirePackage{jeomath}
+    \RequirePackage{wvwcmath}
 
   % Font settings for Palatino.
     % If these are loaded before amssymb it causes an error

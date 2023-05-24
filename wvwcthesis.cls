@@ -1,7 +1,18 @@
 % This class file is a slightly modifed version of the UIdaho thesis template
-% provided by COGS, oringally accessed in 2015.
+% created by Matthew Singer, oringally accessed in 2015. See
+% https://www.overleaf.com/latex/templates/university-of-idaho-thesis-and-dissertation-template/vsbrhrybkthx
+% for a current version of that class file. The Creative Commons CC BY
+% 4.0 license applies to this file:
+% http://creativecommons.org/licenses/by/4.0
+
+% Differences: removed Minion Pro option. Changed ``major professor'' to
+% ``advisor.'' Included WVWC logo. Changed dissertation language to
+% senior project language\@. Adjusted advisor/committee and month/year
+% formatting. Changed formatting of TOC\@.  Changed chapter title
+% positioning. Changed section title formatting.
+
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mythesis}[2022/11/18 mythesis.cls]
+\ProvidesClass{wvwcthesis}[2023/05/24 wvwcthesis.cls]
 
 \RequirePackage{setspace}
 
@@ -164,7 +175,7 @@
   {\large Senior Research Project\\[12pt]}
   \textit{in the}\\[12pt]
   {Department of \@department\\[12pt]
-   \textit{at}\\[12pt] 
+   \textit{at}\\[12pt]
 %     \@faculty\\[12pt]
     \@institution\\}
   \bigskip\bigskip\bigskip%\bigskip
@@ -185,7 +196,7 @@
 %   {\textsc\@admin}\\[12pt]
 % This is new stuff to make COGS happy
 \bigskip
-  
+
   {\textssc\@month\ \@year}\\[12pt]
 
 \end{center}

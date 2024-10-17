@@ -1,5 +1,8 @@
+\def\fileversion{0.11}
+\def\filedate{2024/10/17}
+
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{wvwcdocs}[2023/05/23 wvwcdocs.cls]
+\ProvidesClass{wvwcdocs}[\filedate\space Version \fileversion]
 
 \RequirePackage{etoolbox}
 \newbool{pfont}
@@ -130,4 +133,7 @@
 %           DOCUMENT INFORMATION           %
 %==========================================%
   % Only relevant for assessments
-  \pointsinmargin
+    \marginpointname{}
+    \pointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints}}}
+    \marginbonuspointname{}
+    \bonuspointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints +}}}

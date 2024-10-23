@@ -78,6 +78,8 @@
           \let\course\mycls@headerror
           \let\examnum\mycls@headerror
           \let\examdate\mycls@headerror
+          % Set point display for problems.
+          \nopointsinmargin
       }
     }
   % Used for exams.
@@ -101,6 +103,12 @@
           \let\course\mycls@headerror
           \let\examnum\mycls@headerror
           \let\examdate\mycls@headerror
+          % Set points.
+          \marginpointname{}
+          \pointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints}}}
+          \marginbonuspointname{}
+          \bonuspointformat{\fbox{\phantom{$ \sum $}/{\scriptsize
+                \themarginpoints +}}}
       }
     }
   % Assume all other options are sent to exam class
@@ -133,7 +141,3 @@
 %           DOCUMENT INFORMATION           %
 %==========================================%
   % Only relevant for assessments
-    \marginpointname{}
-    \pointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints}}}
-    \marginbonuspointname{}
-    \bonuspointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints +}}}

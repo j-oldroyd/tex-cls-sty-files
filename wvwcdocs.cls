@@ -107,8 +107,6 @@
           \marginpointname{}
           \pointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints}}}
           \marginbonuspointname{}
-          \bonuspointformat{\fbox{\phantom{$ \sum $}/{\scriptsize
-                \themarginpoints +}}}
       }
     }
   % Assume all other options are sent to exam class
@@ -141,3 +139,4 @@
 %           DOCUMENT INFORMATION           %
 %==========================================%
   % Only relevant for assessments
+  \nopointsinmargin

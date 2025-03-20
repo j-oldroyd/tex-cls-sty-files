@@ -1,7 +1,11 @@
 %% Provides basic packages/macros for lecture notes and exams/assignments.
 %% Lecture notes and assessments are currently set up to use math-jeo.cls.
-\def\fileversion{0.11}
-\def\filedate{2024/10/17}
+\def\fileversion{0.12}
+\def\filedate{2025/03/20}
+
+%% CHANGES
+%% Version 0.12
+% Remove physics package.
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{wvwcmath}[\filedate\space Version \fileversion]
@@ -24,7 +28,6 @@
 
   % Packages for implementing basic notation, e.g., derivatives and paired delimiters
     \RequirePackage{%
-    physics,
     mathtools,
     derivative
     }

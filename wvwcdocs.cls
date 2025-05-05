@@ -107,6 +107,7 @@
           \marginpointname{}
           \pointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints}}}
           \marginbonuspointname{}
+          \pointstwosided
       }
     }
   % Assume all other options are sent to exam class
@@ -121,6 +122,7 @@
 %=========================%
   % Load personal defaults
     \RequirePackage{wvwcmath}
+    \RequirePackage{mlmodern}
 
   % Font settings for Palatino.
     % If these are loaded before amssymb it causes an error

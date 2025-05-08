@@ -18,6 +18,12 @@
     \newcommand{\bookchapter}[1]{\gdef\@bookchapter{#1}}
     \newcommand{\@chaptertopic}{}
     \newcommand{\chaptertopic}[1]{\gdef\@chaptertopic{#1}}
+    \newcommand{\@name}{}
+    \newcommand{\name}[1]{\gdef\@name{#1}}
+    \newcommand{\@diarytype}{}
+    \newcommand{\diarytype}[1]{\gdef\@diarytype{#1}}
+    \newcommand{\@topic}{}
+    \newcommand{\topic}[1]{\gdef\@topic{#1}}
     \newcommand{\@examnum}{}
     \newcommand{\examnum}[1]{\gdef\@examnum{#1}}
     \newcommand{\@examdate}{}
@@ -54,6 +60,21 @@
         \let\course\mycls@headerror
         \let\bookchapter\mycls@headerror
         \let\chaptertopic\mycls@headerror
+      }
+    }
+    \DeclareOption{diary}{%
+      \AtBeginDocument{%
+        % These commands set up the running header on the top of the exam pages
+        \pagestyle{headandfoot}
+        \header{\textsc{\@name}}{\textsc{\@diarytype}}{\textsc{\@topic}}
+        % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+        \headrule
+        \extraheadheight{.5cm}
+        % Check to see if document info commands are given after preamble
+        % Uses \mycls@headerror to provide error message
+        \let\name\mycls@headerror
+        \let\diarytype\mycls@headerror
+        \let\topic\mycls@headerror
       }
     }
   % Used for homework.

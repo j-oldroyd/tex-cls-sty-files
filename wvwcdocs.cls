@@ -1,5 +1,39 @@
-\def\fileversion{0.11}
-\def\filedate{2024/10/17}
+% wvwcdocs.cls
+%
+% A LaTeX2e document class for lecture notes, research diaries,
+% homework assignments and exams in several mathematics courses at
+% West Virginia Wesleyan College.
+
+%% wvwcdocs.cls
+%% Copyright (c) 2025 Jesse Oldroyd
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2003/12/01 or later.
+%
+% This work has the LPPL maintenance status "author-maintained".
+%
+% This work consists of the files wvwcdocs.cls and wvwcmath.sty.
+
+%%% Jesse Oldroyd
+%%% Department of Mathematics and Computer Science
+%%% West Virginia Wesleyan College
+%%% Buckhannon, WV 26201
+%%% oldroyd.j@wvwc.edu
+
+\def\fileversion{0.12}
+\def\filedate{2025/5/14}
+
+% =====================================%
+% This class and associated style file are built around Philip
+% Hirschhorn's excellent exam.cls LaTeX class.  The thorough
+% documentation provided is particularly relevant to the documentation
+% provided here.  Please see http://www-math.mit.edu/~psh/ for the
+% latest version of the exam class.
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wvwcdocs}[\filedate\space Version \fileversion]

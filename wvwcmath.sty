@@ -272,9 +272,13 @@
     \newcommand{\pointbox}{%
       \fbox{Points:$\phantom{\bigg]}$\makebox[.75cm]{}/\pointsonpage{\thepage}}}
 
-    % Create'' ``section'' command that cooperates with questions
+    % Create ``section'' command that cooperates with questions
     % environment.  Although the regular section command works within
     % the questions environment, it doesn't have proper indentation.
     % It also interferes with AUCTeX/RefTeX, causing it to miss
     % labeled questions.
     \newcommand{\qsection}[1]{\uplevel{\textbf{#1}}}
+
+    % Create an alias for ''\part'' command to use in ``questions''
+    % environment
+    \newcommand{\qpart}{\part}

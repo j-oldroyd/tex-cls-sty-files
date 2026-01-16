@@ -198,6 +198,25 @@
     \DeclarePairedDelimiter\abrackets{\langle}{\rangle}
     \DeclarePairedDelimiter\norm{\|}{\|}
 
+   % The code below defines cycle notation in LaTeX, and is taken from
+   % egreg's answer on this Stack Exchange post:
+   % https://tex.stackexchange.com/questions/135868/permutation-cycle-notation
+    \ExplSyntaxOn
+    \NewDocumentCommand{\cycle}{ O{\;} m }
+    {
+      (
+      \cycle:nn { #1 } { #2 }
+      )
+    }
+
+    \seq_new:N \l_cycle_seq
+    \cs_new_protected:Npn \cycle:nn #1 #2
+    {
+      \seq_set_split:Nnn \l_cycle_seq { , } { #2 }
+      \seq_use:Nn \l_cycle_seq { #1 }
+    }
+    \ExplSyntaxOff
+
   % Miscellaneous symbols, functions, mathmode commands.
     \newcommand{\RR}{\ensuremath{\mathbb{R}}}
     \newcommand{\QQ}{\ensuremath{\mathbb{Q}}}

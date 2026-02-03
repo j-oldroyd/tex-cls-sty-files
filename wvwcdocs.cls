@@ -177,6 +177,7 @@
 %=========================%
   % Load personal defaults
     \RequirePackage{wvwcmath}
+    \usepackage[T1]{fontenc}
     \RequirePackage{mlmodern}
 
   % Font settings for Palatino.

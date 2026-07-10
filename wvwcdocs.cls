@@ -72,8 +72,8 @@
 %===========================================%
   % Set a boolean variable to be true in order to use palatino fonts below.
   % Requires etoolbox.
-  \DeclareOption{palatino}{%
-    \booltrue{pfont}
+    \DeclareOption{palatino}{
+      \booltrue{pfont}
   }
 
   \DeclareOption{palatinoXTX}{%
@@ -81,90 +81,91 @@
   }
 
   % Used for lecture notes.
-    \DeclareOption{lecture}{%
-      \AtBeginDocument{%
-        % These commands set up the running header on the top of the exam pages
+  \DeclareOption{lecture}{%
+    \AtBeginDocument{%
+      % These commands set up the running header on the top of the exam pages
+      \pagestyle{headandfoot}
+      \header{\textsc{\@course}}{\textsc{\@bookchapter}}{\textsc{\@chaptertopic}}
+      % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+      \headrule
+      \extraheadheight{.5cm}
+      % Check to see if document info commands are given after preamble
+      % Uses \mycls@headerror to provide error message
+      \let\course\mycls@headerror
+      \let\bookchapter\mycls@headerror
+      \let\chaptertopic\mycls@headerror
+    }
+  }
+  % Used for research journals
+  \DeclareOption{diary}{%
+    \AtBeginDocument{%
+      % These commands set up the running header on the top of the exam pages
+      \pagestyle{headandfoot}
+      \header{\textsc{\@name}}{\textsc{\@diarytype}}{\textsc{\@topic}}
+      % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+      \headrule
+      \extraheadheight{.5cm}
+      % Check to see if document info commands are given after preamble
+      % Uses \mycls@headerror to provide error message
+      \let\name\mycls@headerror
+      \let\diarytype\mycls@headerror
+      \let\topic\mycls@headerror
+    }
+  }
+  % Used for homework.
+  \DeclareOption{homework}{%
+    \PassOptionsToClass{addpoints}{exam}
+    \AtBeginDocument{%
         \pagestyle{headandfoot}
-        \header{\textsc{\@course}}{\textsc{\@bookchapter}}{\textsc{\@chaptertopic}}
-        % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+        % Allow horizontal rule under header for coverpage and main pages
+        \coverheadrule
         \headrule
+        % These commands set up the header for the cover page(s)
+        \coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
+        % \firstpageheadrule
+        % These commands set up the running header on the top of the main exam pages
+        % Headers and footers make use of \oddeven to get page number to appear on outside of page
+        \header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
+        % Clear footer
+        \footer{}{}{}
         \extraheadheight{.5cm}
         % Check to see if document info commands are given after preamble
         % Uses \mycls@headerror to provide error message
         \let\course\mycls@headerror
-        \let\bookchapter\mycls@headerror
-        \let\chaptertopic\mycls@headerror
-      }
+        \let\examnum\mycls@headerror
+        \let\examdate\mycls@headerror
+        % Set point display for problems.
+        \nopointsinmargin
     }
-    \DeclareOption{diary}{%
-      \AtBeginDocument{%
-        % These commands set up the running header on the top of the exam pages
+  }
+  % Used for exams.
+  \DeclareOption{exam}{%
+    \PassOptionsToClass{addpoints}{exam}
+    \AtBeginDocument{%
         \pagestyle{headandfoot}
-        \header{\textsc{\@name}}{\textsc{\@diarytype}}{\textsc{\@topic}}
-        % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+        % Allow horizontal rule under header for coverpage and main pages
+        \coverheadrule
         \headrule
+        % These commands set up the header for the cover page(s)
+        \coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
+        % \firstpageheadrule
+        % These commands set up the running header on the top of the main exam pages
+        % Headers and footers make use of \oddeven to get page number and point box to appear on outside of page
+        \header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
+        \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
         \extraheadheight{.5cm}
         % Check to see if document info commands are given after preamble
         % Uses \mycls@headerror to provide error message
-        \let\name\mycls@headerror
-        \let\diarytype\mycls@headerror
-        \let\topic\mycls@headerror
-      }
+        \let\course\mycls@headerror
+        \let\examnum\mycls@headerror
+        \let\examdate\mycls@headerror
+        % Set points.
+        \marginpointname{}
+        \pointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints}}}
+        \marginbonuspointname{}
+        \pointstwosided
     }
-  % Used for homework.
-    \DeclareOption{homework}{%
-      \PassOptionsToClass{addpoints}{exam}
-      \AtBeginDocument{%
-          \pagestyle{headandfoot}
-          % Allow horizontal rule under header for coverpage and main pages
-          \coverheadrule
-          \headrule
-          % These commands set up the header for the cover page(s)
-          \coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
-          % \firstpageheadrule
-          % These commands set up the running header on the top of the main exam pages
-          % Headers and footers make use of \oddeven to get page number to appear on outside of page
-          \header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
-          % Clear footer
-          \footer{}{}{}
-          \extraheadheight{.5cm}
-          % Check to see if document info commands are given after preamble
-          % Uses \mycls@headerror to provide error message
-          \let\course\mycls@headerror
-          \let\examnum\mycls@headerror
-          \let\examdate\mycls@headerror
-          % Set point display for problems.
-          \nopointsinmargin
-      }
-    }
-  % Used for exams.
-    \DeclareOption{exam}{%
-      \PassOptionsToClass{addpoints}{exam}
-      \AtBeginDocument{%
-          \pagestyle{headandfoot}
-          % Allow horizontal rule under header for coverpage and main pages
-          \coverheadrule
-          \headrule
-          % These commands set up the header for the cover page(s)
-          \coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
-          % \firstpageheadrule
-          % These commands set up the running header on the top of the main exam pages
-          % Headers and footers make use of \oddeven to get page number and point box to appear on outside of page
-          \header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
-          \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-          \extraheadheight{.5cm}
-          % Check to see if document info commands are given after preamble
-          % Uses \mycls@headerror to provide error message
-          \let\course\mycls@headerror
-          \let\examnum\mycls@headerror
-          \let\examdate\mycls@headerror
-          % Set points.
-          \marginpointname{}
-          \pointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints}}}
-          \marginbonuspointname{}
-          \pointstwosided
-      }
-    }
+  }
   % Assume all other options are sent to exam class
     \DeclareOption*{\PassOptionsToClass{\CurrentOption}{exam}}
   \ProcessOptions\relax

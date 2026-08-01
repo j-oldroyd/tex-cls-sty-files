@@ -37,9 +37,29 @@
 
 \RequirePackage{graphics}
 \RequirePackage{afterpage}
+\RequirePackage{tabularx}
+\RequirePackage{xcolor}
 
 % This class extends the article class primarily to take advantage of tagged PDF compatibility.
 \LoadClass[11pt]{article}
+
+% ============ %
+% CLASS MACROS %
+% ============ %
+% The code below is adapted from
+% https://tex.stackexchange.com/a/40051/60075
+\definecolor{headingorange}{RGB}{247, 230, 215}
+
+\usepackage{titlesec}
+\titleformat{name=\section}[block]
+{\bfseries\large}
+{}
+{0pt}
+{\colorsection}
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+
+\newcommand{\colorsection}[1]{%
+  \colorbox{headingorange}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}}
 
 % ===== %
 % FONTS %
@@ -71,6 +91,7 @@ showframe,
 }
 
 % Remaining page headfoot
+\fancyhf{}
 \fancyfoot[C]{\@course{} Syllabus, Page~\thepage}
 
 \AtBeginDocument{%
@@ -86,7 +107,30 @@ showframe,
 
   \begin{center}
     {\large \textbf{\@course{}: \@coursetitle{}}}
-    \par
-    {\large \textbf{\@term{} | 3 credits}}
+
+    {\large \textbf{\@term{} | 3 credits}} % TODO: Add credit hour user option
+    % TODO: Add term dates in following form: START--END
   \end{center}
+
+  {\noindent\large \textbf{Instructor \& Course Details}}
+
+  \begin{center}
+    \begin{tabularx}{6.625in}{lXl}
+      \textbf{Instructor:} Jesse Oldroyd && \\
+      \textbf{Email:}  && \textbf{Phone:} 304-473-8339 \\ % TODO: enter email
+      \textbf{Office Location:} CHS 125 && \textbf{Office Hours} \\ % TODO: enter office hours
+      \textbf{Modality of Course:} && \\ % TODO: enter modality of course
+      \textbf{Days and Times of Class:} && \\ % TODO: enter meeting times
+      \textbf{Building and Room:} && \\ % TODO: enter class location
+    \end{tabularx}
+  \end{center}
+
+  \section{Catalog Description}
+
+  \section{Prerequisites}
+
+  \section{Required Textbook(s) and Materials}
+
+  \section{Student Learning Outcomes}
+  Upon successful completion of the course, students will be able to\dots
   }

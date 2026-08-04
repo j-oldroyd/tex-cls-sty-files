@@ -49,6 +49,7 @@
 % The code below is adapted from
 % https://tex.stackexchange.com/a/40051/60075
 \definecolor{headingorange}{RGB}{247, 230, 215}
+\definecolor{wvwcorange}{HTML}{F05123}
 
 \usepackage{titlesec}
 \titleformat{name=\section}[block]
@@ -87,6 +88,9 @@ showframe,
 % First page headfoot style.
 \fancypagestyle{firstpage}{%
   \fancyhead[C]{\vspace{-\baselineskip} \par \includegraphics{wvwclogo.jpg} \vspace{\baselineskip} \par {\Large \textbf{Course Syllabus} \par}}
+  \renewcommand{\headrulewidth}{.05in}
+  \let\oldheadrule\headrule
+  \renewcommand{\headrule}{\color{wvwcorange}\oldheadrule}
   \fancyfoot[C]{\@course{} Syllabus, Page~\thepage}
 }
 

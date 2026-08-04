@@ -19,7 +19,7 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.1}
+\def\fileversion{0.2}
 \def\filedate{2026/08/04}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -135,13 +135,4 @@ showframe,
       \textbf{Building and Room:} && \\ % TODO: enter class location
     \end{tabularx}
   \end{center}
-
-  \section{Catalog Description}
-
-  \section{Prerequisites}
-
-  \section{Required Textbook(s) and Materials}
-
-  \section{Student Learning Outcomes}
-  Upon successful completion of the course, students will be able to\dots
   }

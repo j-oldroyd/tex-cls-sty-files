@@ -19,8 +19,8 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.0}
-\def\filedate{2026/07/31}
+\def\fileversion{0.1}
+\def\filedate{2026/08/04}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wvwcsyllabus}[\filedate\space WVWC syllabus version \fileversion]
@@ -34,6 +34,12 @@
 \newcommand{\coursetitle}[1]{\gdef\@coursetitle{#1}}
 \newcommand{\@term}{}
 \newcommand{\term}[1]{\gdef\@term{#1}}
+\newcommand{\@credits}{}
+\newcommand{\credits}[1]{\gdef\@credits{#1}}
+\newcommand{\@termstart}{}
+\newcommand{\termstart}[1]{\gdef\@termstart{#1}}
+\newcommand{\@termend}{}
+\newcommand{\termend}[1]{\gdef\@termend{#1}}
 
 \RequirePackage{graphics}
 \RequirePackage{afterpage}
@@ -112,8 +118,9 @@ showframe,
   \begin{center}
     {\large \textbf{\@course{}: \@coursetitle{}}}
 
-    {\large \textbf{\@term{} | 3 credits}} % TODO: Add credit hour user option
-    % TODO: Add term dates in following form: START--END
+    {\large \textbf{\@term{} | \@credits{} credit(s)}}
+
+    {\large \textbf{\@termstart{}--\@termend{}}}
   \end{center}
 
   {\noindent\large \textbf{Instructor \& Course Details}}

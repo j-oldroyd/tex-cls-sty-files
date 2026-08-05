@@ -59,17 +59,13 @@
 \definecolor{wvwcorange}{HTML}{F05123}
 
 \usepackage{titlesec}
-\titleformat{name=\section}[block]
-{\bfseries\large}
-{}
-{0pt}
-{\colorsection}
-{}
-\titlespacing*{\section}{9bp}{9bp}{-9bp}
+\titleformat{name=\section}[block] {\bfseries\large} {} {0pt} {\colorsection} {}
+\titlespacing*{\section}{9bp}{9bp}{-9bp}	% {<cmd>}{<left>}{<before>}{<after>}[<right>]
 \titlespacing*{\subsection}{0.25in}{12pt}{6pt}
 \newcommand{\colorsection}[1]{%
 	\colorbox{headingorange}{%
-		\parbox[][18bp][c]{\dimexpr\textwidth-2\fboxsep}{\hspace{9bp}#1\vphantom{27bp}}
+		% \parbox[][18bp][c]{\dimexpr\textwidth-2\fboxsep}{\hspace{9bp}#1\vphantom{27bp}}
+		\parbox[][18bp][c]{\dimexpr\textwidth-18bp}{\hspace{9bp}#1\vphantom{27bp}}
 	}
 }
 
@@ -144,7 +140,8 @@
 		{\large \textbf{\@termstart{}--\@termend{}}}
 	\end{center}
 
-		{\noindent\large \textbf{Instructor \& Course Details}}
+	% {\noindent\large \textbf{Instructor \& Course Details}}
+	\section{Instructor \& Course Details}
 
 	\begin{center}
 		\begin{tabularx}{6.625in}{lXl}
@@ -267,6 +264,6 @@
 		To set up an initial session at the Counseling Center, email \href{mailto:counseling@wvwc.edu}{counseling@wvwc.edu}.
 		To set up an initial session with Community Care, call 304.937.0041.
 
-        If you are in crisis after hours, call Campus Security at (304) 473-8011 or 988.
+		If you are in crisis after hours, call Campus Security at (304) 473-8011 or 988.
 	\end{adjustwidth}
 }

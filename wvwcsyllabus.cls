@@ -113,6 +113,14 @@
 \fancyhf{}
 \fancyfoot[C]{\@course{} Syllabus, Page~\thepage}
 
+\usepackage{hyperref} % Load this after loading class to avoid conflict
+\hypersetup{%
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
 \AtBeginDocument{%
 	\thispagestyle{firstpage}
 	\newgeometry{%

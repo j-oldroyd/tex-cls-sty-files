@@ -67,7 +67,8 @@
 \titlespacing*{\section}{0pt}{0pt}{0pt}
 
 \newcommand{\colorsection}[1]{%
-  \colorbox{headingorange}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}}
+	\colorbox{headingorange}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}
+}
 
 % ===== %
 % FONTS %
@@ -81,12 +82,12 @@
 % PAGE LAYOUT %
 % =========== %
 \usepackage[%
-top = 0.5in,
-bottom = 0.5in,
-left = 0.7in,
-right = 0.7in,
-includeheadfoot,
-showframe,
+	top = 0.5in,
+	bottom = 0.5in,
+	left = 0.7in,
+	right = 0.7in,
+	includeheadfoot,
+	showframe,
 ]{geometry}
 
 \usepackage{fancyhdr}
@@ -94,11 +95,18 @@ showframe,
 
 % First page headfoot style.
 \fancypagestyle{firstpage}{%
-  \fancyhead[C]{\vspace{-\baselineskip} \par \includegraphics{wvwclogo.jpg} \vspace{\baselineskip} \par {\Large \textbf{Course Syllabus} \par}}
-  \renewcommand{\headrulewidth}{.05in}
-  \let\oldheadrule\headrule
-  \renewcommand{\headrule}{\color{wvwcorange}\oldheadrule}
-  \fancyfoot[C]{\@course{} Syllabus, Page~\thepage}
+	\fancyhead[C]{%
+		\vspace{-\baselineskip}
+		\par
+		\includegraphics{wvwclogo.jpg}
+		\vspace{\baselineskip}
+		\par
+		{\Large \textbf{Course Syllabus} \par}
+	}
+	\renewcommand{\headrulewidth}{.05in}
+	\let\oldheadrule\headrule
+	\renewcommand{\headrule}{\color{wvwcorange}\oldheadrule}
+	\fancyfoot[C]{\@course{} Syllabus, Page~\thepage}
 }
 
 % Remaining page headfoot
@@ -106,34 +114,35 @@ showframe,
 \fancyfoot[C]{\@course{} Syllabus, Page~\thepage}
 
 \AtBeginDocument{%
-  \thispagestyle{firstpage}
-  \newgeometry{%
-    top = 0.5in,
-    bottom = 0.5in,
-    left = 0.7in,
-    right = 0.7in,
-    includeheadfoot,
-    headheight = 2.25in}
-  \afterpage{\aftergroup\restoregeometry}
+	\thispagestyle{firstpage}
+	\newgeometry{%
+		top = 0.5in,
+		bottom = 0.5in,
+		left = 0.7in,
+		right = 0.7in,
+		includeheadfoot,
+		headheight = 2.25in,
+	}
+	\afterpage{\aftergroup\restoregeometry}
 
-  \begin{center}
-    {\large \textbf{\@course{}: \@coursetitle{}}}
+	\begin{center}
+		{\large \textbf{\@course{}: \@coursetitle{}}}
 
-    {\large \textbf{\@term{} | \@credits{} credit(s)}}
+		{\large \textbf{\@term{} | \@credits{} credit(s)}}
 
-    {\large \textbf{\@termstart{}--\@termend{}}}
-  \end{center}
+		{\large \textbf{\@termstart{}--\@termend{}}}
+	\end{center}
 
-  {\noindent\large \textbf{Instructor \& Course Details}}
+		{\noindent\large \textbf{Instructor \& Course Details}}
 
-  \begin{center}
-    \begin{tabularx}{6.625in}{lXl}
-      \textbf{Instructor:} Jesse Oldroyd && \\
-      \textbf{Email:}  && \textbf{Phone:} 304-473-8339 \\ % TODO: enter email
-      \textbf{Office Location:} CHS 125 && \textbf{Office Hours} \\ % TODO: enter office hours
-      \textbf{Modality of Course:} && \\ % TODO: enter modality of course
-      \textbf{Days and Times of Class:} && \\ % TODO: enter meeting times
-      \textbf{Building and Room:} && \\ % TODO: enter class location
-    \end{tabularx}
-  \end{center}
-  }
+	\begin{center}
+		\begin{tabularx}{6.625in}{lXl}
+			\textbf{Instructor:} Jesse Oldroyd &  &                              \\
+			\textbf{Email:}                    &  & \textbf{Phone:} 304-473-8339 \\ % TODO: enter email
+			\textbf{Office Location:} CHS 125  &  & \textbf{Office Hours}        \\ % TODO: enter office hours
+			\textbf{Modality of Course:}       &  &                              \\ % TODO: enter modality of course
+			\textbf{Days and Times of Class:}  &  &                              \\ % TODO: enter meeting times
+			\textbf{Building and Room:}        &  &                              \\ % TODO: enter class location
+		\end{tabularx}
+	\end{center}
+}

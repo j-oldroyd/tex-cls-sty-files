@@ -152,14 +152,30 @@
 	\section{Instructor \& Course Details}
 
 	\begin{center}
-		\begin{tabularx}{6.625in}{lXl}
-			\textbf{Instructor:} Jesse Oldroyd                                   &  &                                       \\
-			\textbf{Email:} \href{mailto:oldroyd.j@wvwc.edu}{oldroyd.j@wvwc.edu} &  & \textbf{Phone:} 304-473-8339          \\
-			\textbf{Office Location:} CHS 125                                    &  & \textbf{Office Hours} \@officehours{} \\
-			\textbf{Modality of Course:} \@coursemodality{}                      &  &                                       \\
-			\textbf{Days and Times of Class:} \@coursemeetings{}                 &  &                                       \\
-			\textbf{Building and Room:} \@courselocation{}                       &  &                                       \\
-		\end{tabularx}
+		\begin{minipage}{0.45\linewidth}
+			\begin{tabular}{l}
+				\textbf{Instructor:} Jesse Oldroyd                                   \\
+				\textbf{Email:} \href{mailto:oldroyd.j@wvwc.edu}{oldroyd.j@wvwc.edu} \\
+				\textbf{Office Location:} CHS 125                                    \\
+				\textbf{Phone:} 304-473-8339                                         \\
+				\textbf{Office Hours:} \@officehours{}                               \\
+			\end{tabular}
+		\end{minipage}
+		\begin{minipage}{0.45\linewidth}
+			\begin{tabular}{l}
+				\textbf{Modality of Course:} \@coursemodality{}      \\
+				\textbf{Days and Times of Class:} \@coursemeetings{} \\
+				\textbf{Building and Room:} \@courselocation{}
+			\end{tabular}
+		\end{minipage}
+		% 	\begin{tabularx}{6.625in}{lXl}
+		% 		\textbf{Instructor:} Jesse Oldroyd                                   &  &                                       \\
+		% 		\textbf{Email:} \href{mailto:oldroyd.j@wvwc.edu}{oldroyd.j@wvwc.edu} &  & \textbf{Phone:} 304-473-8339          \\
+		% 		\textbf{Office Location:} CHS 125                                    &  & \textbf{Office Hours} \@officehours{} \\
+		% 		\textbf{Modality of Course:} \@coursemodality{}                      &  &                                       \\
+		% 		\textbf{Days and Times of Class:} \@coursemeetings{}                 &  &                                       \\
+		% 		\textbf{Building and Room:} \@courselocation{}                       &  &                                       \\
+		% 	\end{tabularx}
 	\end{center}
 }
 

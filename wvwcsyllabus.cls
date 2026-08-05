@@ -63,7 +63,8 @@
 {}
 {0pt}
 {\colorsection}
-\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+{}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
 
 \newcommand{\colorsection}[1]{%
   \colorbox{headingorange}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}}

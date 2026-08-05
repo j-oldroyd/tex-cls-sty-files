@@ -45,6 +45,7 @@
 \RequirePackage{afterpage}
 \RequirePackage{tabularx}
 \RequirePackage{xcolor}
+\RequirePackage{changepage}
 
 % This class extends the article class primarily to take advantage of tagged PDF compatibility.
 \LoadClass[11pt]{article}
@@ -64,8 +65,8 @@
 {0pt}
 {\colorsection}
 {}
-\titlespacing*{\section}{0pt}{0pt}{-\baselineskip}
-
+\titlespacing*{\section}{9bp}{9bp}{-9bp}
+\titlespacing*{\subsection}{0.25in}{12pt}{6pt}
 \newcommand{\colorsection}[1]{%
 	\colorbox{headingorange}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}
 }

@@ -19,8 +19,8 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.2}
-\def\filedate{2026/08/04}
+\def\fileversion{0.3}
+\def\filedate{2026/08/05}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wvwcsyllabus}[\filedate\space WVWC syllabus version \fileversion]
@@ -40,6 +40,14 @@
 \newcommand{\termstart}[1]{\gdef\@termstart{#1}}
 \newcommand{\@termend}{}
 \newcommand{\termend}[1]{\gdef\@termend{#1}}
+\newcommand{\@officehours}{}
+\newcommand{\officehours}[1]{\gdef\@officehours{#1}}
+\newcommand{\@coursemodality}{}
+\newcommand{\coursemodality}[1]{\gdef\@coursemodality{#1}}
+\newcommand{\@coursemeetings}{}
+\newcommand{\coursemeetings}[1]{\gdef\@coursemeetings{#1}}
+\newcommand{\@courselocation}{}
+\newcommand{\courselocation}[1]{\gdef\@courselocation{#1}}
 
 \RequirePackage{graphics}
 \RequirePackage{afterpage}
@@ -145,12 +153,12 @@
 
 	\begin{center}
 		\begin{tabularx}{6.625in}{lXl}
-			\textbf{Instructor:} Jesse Oldroyd &  &                              \\
-			\textbf{Email:}                    &  & \textbf{Phone:} 304-473-8339 \\ % TODO: enter email
-			\textbf{Office Location:} CHS 125  &  & \textbf{Office Hours}        \\ % TODO: enter office hours
-			\textbf{Modality of Course:}       &  &                              \\ % TODO: enter modality of course
-			\textbf{Days and Times of Class:}  &  &                              \\ % TODO: enter meeting times
-			\textbf{Building and Room:}        &  &                              \\ % TODO: enter class location
+			\textbf{Instructor:} Jesse Oldroyd                                   &  &                                       \\
+			\textbf{Email:} \href{mailto:oldroyd.j@wvwc.edu}{oldroyd.j@wvwc.edu} &  & \textbf{Phone:} 304-473-8339          \\
+			\textbf{Office Location:} CHS 125                                    &  & \textbf{Office Hours} \@officehours{} \\
+			\textbf{Modality of Course:} \@coursemodality{}                      &  &                                       \\
+			\textbf{Days and Times of Class:} \@coursemeetings{}                 &  &                                       \\
+			\textbf{Building and Room:} \@courselocation{}                       &  &                                       \\
 		\end{tabularx}
 	\end{center}
 }

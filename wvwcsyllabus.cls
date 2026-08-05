@@ -195,4 +195,78 @@
 		reasonable instructor requests may warrant a more immediate, formal response.
 		In these cases, the instructor may move directly to higher-level consequences such as removal from class, written notice, or referral to a department chair or other office.
 	\end{adjustwidth}
+	\subsection*{Statement on Non-Discrimination and Title IX/ADA 504 Information}
+	\begin{adjustwidth}{9bp}{}
+		West Virginia Wesleyan College does not discriminate on the basis of race, sex, color, national or ethnic origin, creed, ancestry, marital/family status, veteran status, sexual orientation, sex characteristics,  pregnancy, religion, age, disability or blindness, or any other characteristic protected by local, state or federal law, to include Title VI, Title VII, Title IX, Section 504, and the Age Discrimination Act, in the administration of its admission policies, scholarship and loan programs, educational programs, employment, athletic programs, co-curricular activities, or other College administered programs.
+		WVWC’s nondiscrimination polices may be accessed at \url{https://www.wvwc.edu/title-ix/}.
+		For inquiries about the application of these laws in WVWC’s programs activities or to file a report, contact the Title IX Coordinator at \href{mailto:titleix@wvwc.edu}{titleix@wvwc.edu} or 304-621-1316.
+	\end{adjustwidth}
+
+	\subsection*{WVWC Policy Regarding Students with Disabilities}
+	\begin{adjustwidth}{9bp}{}
+		West Virginia Wesleyan College supports students who are pregnant (Title IX) and students with disabilities, including short term disabilities (as defined by Section 504 of the Rehabilitation Act of 1973 [29 U.S.C. 794(a)] and Americans with Disabilities Act of 1990 (ADA) [42 U.S.C. § 12101, et seq.])
+
+		If you are a person with any of these conditions and anticipate needing any type of accommodation in order to participate in this class, please advise me and make appropriate arrangements with the Director of the Learning Center and Accessibility Services as specified in our \href{https://www.wvwc.edu/policies-student-handbook/}{Student Handbook}.
+		To discuss accommodation needs, call 304-473-8558.
+	\end{adjustwidth}
+
+	\section{College Resources}
+	\begin{adjustwidth}{9bp}{}
+		Please refer to the \href{https://www.wvwc.edu/policies-student-handbook/}{WVWC Student Handbook} and the \href{https://www.wvwc.edu/students/academic-support/}{Academic Support Center} for more comprehensive information about institutional resources and support.
+	\end{adjustwidth}
+
+	\subsection*{Student Success Center}
+	\label{sec:stud-succ-cent}
+	\begin{adjustwidth}{9bp}{}
+		The Student Success Center provides services designed to assist in the academic development of students.
+		The staff encourages students to reach their full academic potential and provides resources to assist in the journey toward educational goals.
+		The SSC provides a variety of services, including advising, academic skills seminars, and support for first generation college students.
+		Visit the \href{https://www.wvwc.edu/students/academic-support/}{Student Success Center website} for more information.
+	\end{adjustwidth}
+
+	\subsection*{The Learning Center and Accessibility Services}
+	\label{sec:learn-cent-access}
+	\begin{adjustwidth}{9bp}{}
+		West Virginia Wesleyan College is strongly committed to giving you the outstanding learning support you are looking for.
+		Our resources and facilities are among the most complete in the country.
+		They are designed to serve a broad scope of student needs, ranging from the individually structured assistance, accommodations, and services of our foundational program to our specialized, concentrated support systems.
+		Services include graduate school preparation, support for students with learning disabilities, accommodation plans, reading skills, mentoring, counseling, strategizing, and tutoring.
+		Visit \href{https://www.wvwc.edu/the-learning-center/}{The Learning Center and Accessibility Services} for more information.
+	\end{adjustwidth}
+
+	\subsection*{Library Services}
+	\label{sec:library-services}
+	\begin{adjustwidth}{9bp}{}
+		The Annie Merner Pfeiffer Library provides students with access to high-quality scholarly resources and research support that empowers students for success in the classroom.
+		Our research databases offer access to thousands of scholarly journals, electronic books, magazines, streaming media, and news sources.
+		The library also offers print collections of academic and pleasure reading books, local newspapers, and West Virginia magazines and journals.
+		Professional librarians are available to help students find appropriate resources and improve their research skills.
+		Visit the \href{https://amplibrary.wvwc.edu/libraryhome}{library website} or email \href{mailto:librarian@wvwc.edu}{librarian@wvwc.edu} for assistance.
+	\end{adjustwidth}
+
+	\subsection*{Writing Center}
+	\label{sec:writing-center}
+
+	\begin{adjustwidth}{9bp}{}
+		The Writing Center at West Virginia Wesleyan College is a welcoming space where students receive personalized support for their writing needs across various disciplines. As a student-focused resource, we prioritize creating an inclusive environment that fosters growth, critical thinking, and effective communication skills. Through collaborative consultations, workshops, and resources, we strive to help students develop their writing abilities, enhance their academic performance, and cultivate lifelong writing skills. Email \href{mailto:writing_center@wvwc.edu}{writing\_center@wvwc.edu} for more information.
+	\end{adjustwidth}
+
+	\subsection*{Counseling Services}
+	\label{sec:counseling-services}
+
+	\begin{adjustwidth}{9bp}{}
+		The WVWC Counseling Center offers free therapy sessions to all students as part of Wesleyan’s commitment to student well-being.
+		The objective of the Counseling Center is to assist students in resolving personal and educational concerns, developing self-management and interpersonal skills, and learning to improve individual well-being.
+		A variety of services are offered, including individual counseling, educational programs and resource materials on a variety of important issues.
+		These services are confidential.
+		If a student needs specialized services not available on campus, the staff will make an appropriate recommendation or referral.
+
+		The main WVWC Counseling Center door is located across from the back of Christopher Hall of Science.
+		The Center partners with Community Care therapists as well (these sessions are billed to the student’s insurance).
+		While both therapy options are located in the same building, they are separate entities.
+		To set up an initial session at the Counseling Center, email \href{mailto:counseling@wvwc.edu}{counseling@wvwc.edu}.
+		To set up an initial session with Community Care, call 304.937.0041.
+
+        If you are in crisis after hours, call Campus Security at (304) 473-8011 or 988.
+	\end{adjustwidth}
 }

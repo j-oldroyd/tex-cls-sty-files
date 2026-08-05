@@ -68,7 +68,9 @@
 \titlespacing*{\section}{9bp}{9bp}{-9bp}
 \titlespacing*{\subsection}{0.25in}{12pt}{6pt}
 \newcommand{\colorsection}[1]{%
-	\colorbox{headingorange}{\parbox{\dimexpr\textwidth-2\fboxsep}{#1}}
+	\colorbox{headingorange}{%
+		\parbox[][18bp][c]{\dimexpr\textwidth-2\fboxsep}{\hspace{9bp}#1\vphantom{27bp}}
+	}
 }
 
 % ===== %

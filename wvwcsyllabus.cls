@@ -157,3 +157,42 @@
 		\end{tabularx}
 	\end{center}
 }
+
+\AtEndDocument{%
+	% Add boilerplate
+	\section{College Policies}
+	\begin{adjustwidth}{9bp}{}
+		Please refer to the \href{https://www.wvwc.edu/policies-student-handbook/}{WVWC Student Handbook} for more comprehensive information about institutional-level policies.
+	\end{adjustwidth}
+
+	\subsection*{Academic Integrity}
+	\begin{adjustwidth}{9bp}{}
+		For clarification on academic integrity violations, and corresponding penalties and procedures,
+		students should consult the \href{https://www.wvwc.edu/policies-student-handbook/}{WVWC Student Handbook}.
+	\end{adjustwidth}
+
+	\subsection*{Classroom Behavior}
+	\begin{adjustwidth}{9bp}{}
+		Students share responsibility for maintaining a respectful and inclusive learning environment that supports participation across diverse perspectives and lived experiences.
+		Disruptive behavior, including repeated tardiness, side conversations, misuse of technology, or conduct that limits others’ ability to engage, will be addressed through the following process:
+
+		\begin{enumerate}
+			\item Verbal reminder: The instructor will redirect the behavior during class.
+
+			\item Verbal warning: A more direct warning will be issued and documented.
+
+			\item Removal from class: The student may be asked to leave for the remainder of the
+			      session.
+
+			\item Written notice: A written warning will outline expectations and next steps.
+
+			\item Meeting and escalation: Continued disruption will require a meeting with the instructor
+			      and may be referred to the department chair or the Office of Academic Affairs.
+		\end{enumerate}
+
+		Because the college is committed to safeguarding a respectful and inclusive learning
+		environment, some behaviors, such as discriminatory remarks or refusal to comply with
+		reasonable instructor requests may warrant a more immediate, formal response.
+		In these cases, the instructor may move directly to higher-level consequences such as removal from class, written notice, or referral to a department chair or other office.
+	\end{adjustwidth}
+}

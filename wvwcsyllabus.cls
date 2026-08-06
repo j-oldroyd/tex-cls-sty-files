@@ -19,7 +19,7 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.4}
+\def\fileversion{0.4.1}
 \def\filedate{2026/08/06}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -128,6 +128,8 @@
 	filecolor=magenta,
 	urlcolor=cyan,
 }
+
+\usepackage{booktabs}
 
 \AtBeginDocument{%
 	\thispagestyle{firstpage}

@@ -19,8 +19,8 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.3}
-\def\filedate{2026/08/05}
+\def\fileversion{0.4}
+\def\filedate{2026/08/06}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wvwcsyllabus}[\filedate\space WVWC syllabus version \fileversion]
@@ -54,6 +54,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{xcolor}
 \RequirePackage{changepage}
+\RequirePackage{biblatex}
 
 % This class extends the article class primarily to take advantage of tagged PDF compatibility.
 \LoadClass[11pt]{article}
@@ -94,7 +95,7 @@
 	left = 0.7in,
 	right = 0.7in,
 	includeheadfoot,
-	showframe,
+	% showframe,
 ]{geometry}
 
 \usepackage{fancyhdr}

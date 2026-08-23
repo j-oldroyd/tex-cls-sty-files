@@ -19,7 +19,7 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.5.0}
+\def\fileversion{0.5.1}
 \def\filedate{2026/08/23}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -48,6 +48,10 @@
 \newcommand{\coursemeetings}[1]{\gdef\@coursemeetings{#1}}
 \newcommand{\@courselocation}{}
 \newcommand{\courselocation}[1]{\gdef\@courselocation{#1}}
+\newcommand{\@withdrawal}{}
+\newcommand{\withdrawal}[1]{\gdef\@withdrawal{#1}}
+\newcommand{\@finalexamdate}{}
+\newcommand{\finalexamdate}[1]{\gdef\@finalexamdate{#1}}
 
 \RequirePackage{graphics}
 \RequirePackage{afterpage}
@@ -379,6 +383,7 @@ includeheadfoot,
 
   % Remaining page headfoot
   \fancyhf{}
+  \fancyhead[C]{\footnotesize\textit{DIFFERENTIAL EQUATIONS}}
   \fancyfoot[C]{Page \thepage\ of \ztotpages}
 
   % \pagestyle{headandfoot}
@@ -396,6 +401,87 @@ includeheadfoot,
       \textbf{LECTURE:} & \@coursemeetings{}  && \textbf{CLASSROOM:} & \@courselocation{}\\\bottomrule
     \end{tabularx}
   \end{center}
+}
+
+\AtEndDocument{%
+  \paragraph{ATTENDANCE:} Attendance will be taken for record-keeping purposes but will not directly affect your grade.
+However, keep in mind that attending class regularly is \textbf{absolutely crucial} to succeeding in this course.
+If you miss class or know that you will be missing class, please contact me as soon as you can to determine what material and announcements you may be missing.
+Should you miss a class, \textit{it is your responsibility to cover any missed material.}
+
+\paragraph*{IMPORTANT DATES:}
+\begin{itemize}
+\item Withdrawal deadline: \@withdrawal{}.
+
+\item Final exam: \@finalexamdate{}.
+\end{itemize}
+
+\paragraph{ACADEMIC INTEGRITY:}\label{academic-integrity} I follow the academic integrity policy as stated in the current \href{https://www.wvwc.edu/wp-content/uploads/2023/08/Student-Handbook-Fall-2023.pdf}{WVWC Student Handbook}.
+The College considers academic dishonesty a serious offense as it diminishes the quality of scholarship and defrauds those who eventually depend upon our knowledge and integrity.
+The penalties for violating these standards are based on our firm belief in academic integrity.
+Violations of academic integrity include but are not limited to the following:
+\begin{enumerate}
+	\item  Cheating on tests, examinations and quizzes;
+
+	\item  Plagiarism; appropriating the original work of another with the intent of falsely misrepresenting work as one's own; includes using the exact words of another without identification of the material as a direct quotation or without citing the exact source; paraphrasing the work of another person without citing the exact source (note that a correct paraphrase requires complete transformation of the passage, not a simple change of a few phrases or words); using facts, figures, statistics, graphical representations or interpretations which are not original with the writer or speaker without citing the original source; knowingly aiding or abetting another who is plagiarizing;
+
+	\item Use of A.I.\ technology, such as ChatGPT, or any other artificial intelligence tool in the creation of course content without the instructor's consent and proper citation;
+
+	\item Collaboration without the instructor's consent on individual assignments intended to be performed outside the classroom;
+
+	\item Submitting work for one course which has already been submitted for another course without the explicit permission of the instructors involved; and,
+
+	\item Selling or purchasing papers or other assignments for submission to meet course requirements.
+	This includes downloading papers from the Internet.
+\end{enumerate}
+
+\paragraph{NON-DISCRIMINATION AND AFFIRMATIVE ACTION:} West Virginia Wesleyan College does not discriminate on the basis of race, sex, color, national or ethnic origin, creed, ancestry, marital/family status, veteran status, sexual orientation, gender, gender identity, gender expression, pregnancy, religion, age, disability or blindness, or any other characteristic protected by local, state or federal law, to include Title VI, Title IX, Section 504, and the Age Discrimination Act, in the administration of its admission policies, scholarship and loan programs, educational programs, employment, athletic programs, co-curricular activities, or other College administered programs.
+For inquiries about the application of these laws in WVWC programs, or to file a report, contact the Title IX Coordinator at 59 College Ave, Buckhannon WV, \href{mailto:titleix@wvwc.edu}{\nolinkurl{titleix@wvwc.edu}}, or 304-621-1316.
+
+\paragraph{THE COLLEGE'S POLICY REGARDING STUDENTS WITH DISABILITIES:} West Virginia Wesleyan College ensures that no qualified person shall, by reason of a disability, be denied access to, excluded from participation in, or denied the benefits of any program or activity operated by the College or be subjected to discrimination under any of its programs or activities.
+The College shall make reasonable accommodations to the known limitations of an otherwise qualified student with a disability to enable the qualified student with the disability to have equal access to educational opportunities, programs and activities.
+Section 504 of the Rehabilitation Act of 1973 [29 U.S.C.\ 794(a)] and Americans with Disabilities Act of 1990 (ADA) [42 U.S.C.\ $\S$ 12101, et seq.].
+
+If you are a person with a disability and anticipate needing any type of accommodation in order to participate in this class, please advise me and make appropriate arrangements with the Director of the Learning Center as specified in our Student Handbook. (TEL: 304-473-8558).
+
+\paragraph{COLLEGE RESOURCES:} Please refer to the \href{https://www.wvwc.edu/students/academic-support/}{Academic Support Center} for more comprehensive information about institutional resources and support.
+\begin{itemize}
+	\item Student Success Center: The Student Success Center provides services designed to assist in the academic development of students.
+      The staff encourages students to reach their full academic potential and provides resources to assist in the journey toward educational goals.
+      The SSC provides a variety of services, including advising, academic skills seminars, and support for first generation college students.
+      Visit the \href{https://www.wvwc.edu/students/academic-support/}{Student Success Center website} for more information.
+
+	\item Learning Center and Office of Accessibility Services: West Virginia Wesleyan College is strongly committed to giving you the outstanding learning support you are looking for.
+      Our resources and facilities are among the most complete in the country.
+      They are designed to serve a broad scope of student needs, ranging from the individually structured assistance, accommodations, and services of our foundational program to our specialized, concentrated support systems.
+      Services include graduate school preparation, support for students with learning disabilities, accommodation plans, reading skills, mentoring, counseling, strategizing, and tutoring.
+      Visit the \href{https://www.wvwc.edu/the-learning-center/}{Learning Center and Office of Accessibility Services} for more information.
+
+	\item Library Services: The Annie Merner Pfeiffer Library provides students with access to high-quality scholarly resources and research support that empowers students for success in the classroom.
+      Our research databases offer access to thousands of scholarly journals, electronic books, magazines, streaming media, and news sources.
+      The library also offers print collections of academic and pleasure reading books, local newspapers, and West Virginia magazines and journals.
+      Professional librarians are available to help students find appropriate resources and improve their research skills.
+      Visit the \href{https://amplibrary.wvwc.edu/libraryhome}{library website} or email \href{mailto:librarian@wvwc.edu}{\nolinkurl{librarian@wvwc.edu}} for assistance.
+
+	\item Writing Center: The Writing Center at West Virginia Wesleyan College is a welcoming space where students receive personalized support for their writing needs across various disciplines.
+      As a student-focused resource, we prioritize creating an inclusive environment that fosters growth, critical thinking, and effective communication skills.
+      Through collaborative consultations, workshops, and resources, we strive to help students develop their writing abilities, enhance their academic performance, and cultivate lifelong writing skills.
+      Email \href{mailto:writing_center@wvwc.edu}{\nolinkurl{writing_center@wvwc.edu}} for more information.
+
+	\item Counseling Services: The WVWC Counseling Center offers free therapy sessions to all students as part of Wesleyan's commitment to student well-being.
+      The objective of the Counseling Center is to assist students in resolving personal and educational concerns, developing self-management and interpersonal skills, and learning to improve individual well-being.
+      A variety of services are offered, including individual counseling, educational programs and resource materials on a variety of important issues.
+      These services are confidential.
+      If a student needs specialized services not available on campus, the staff will make an appropriate recommendation or referral.
+
+	The main WVWC Counseling Center door is located across from the back of Christopher Hall of Science.
+    The Center partners with Community Care therapists as well (these sessions are billed to the student's insurance).
+    While both therapy options are located in the same building, they are separate entities.
+    To set up an initial session at the Counseling Center, email \href{mailto:counseling@wvwc.edu}{\nolinkurl{counseling@wvwc.edu}}.
+    To set up an initial session with Community Care, call (304) 937-0041.
+
+	If you are in crisis after-hours, call Campus Security at (304) 473-8011 or 988.
+  \end{itemize}
 }
 }
 

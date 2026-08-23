@@ -19,8 +19,8 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.4.1}
-\def\filedate{2026/08/06}
+\def\fileversion{0.4.2}
+\def\filedate{2026/08/23}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wvwcsyllabus}[\filedate\space WVWC syllabus version \fileversion]
@@ -130,6 +130,8 @@
 }
 
 \usepackage{booktabs}
+
+\setlength{\parindent}{0pt}
 
 \AtBeginDocument{%
 	\thispagestyle{firstpage}

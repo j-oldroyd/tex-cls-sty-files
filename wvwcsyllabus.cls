@@ -19,7 +19,7 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.4.2}
+\def\fileversion{0.5.0}
 \def\filedate{2026/08/23}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -58,7 +58,92 @@
 
 % This class extends the article class primarily to take advantage of tagged PDF compatibility.
 \LoadClass[11pt]{article}
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{zref-totpages}
+\usepackage{termcal}
+% Calendar commands for schedule
+\newcommand{\MWFClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{\classday} % Friday
+\skipday\skipday % weekend (no class)
+}
 
+\newcommand{\MTWFClass}{%
+\calday[Monday]{\classday} % Monday
+\calday[Tuesday]{\classday} % Tuesday
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{\classday} % Friday
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\MWRFClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\calday[Thursday]{\classday}
+\calday[Friday]{\classday} % Friday
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+
+\newcommand{\homework}[1]{%
+\\\hfill\scriptsize\framebox{HW #1}
+}
+
+\newcommand{\homeworkdue}[1]{%
+\\\scriptsize\framebox{HW #1 due}\hfill\,
+}
+
+\newcommand{\homeworkanddue}[2]{%
+\\\scriptsize\framebox{HW #1 due}\hfill\framebox{HW #2}
+}
+
+\newcommand{\lecture}[1]{\centering\footnotesize #1}
+\newcommand{\test}[1]{\centering\footnotesize\textbf{TEST #1}}
+
+\usepackage[%
+top = 0.5in,
+bottom = 0.5in,
+left = 0.7in,
+right = 0.7in,
+includeheadfoot,
+% showframe,
+]{geometry}
+
+\usepackage{fancyhdr}
+
+\usepackage{hyperref} % Load this after loading class to avoid conflict
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+
+\usepackage{booktabs}
+
+\DeclareOption{fyex}{
 % ============ %
 % CLASS MACROS %
 % ============ %
@@ -67,7 +152,6 @@
 \definecolor{headingorange}{RGB}{247, 230, 215}
 \definecolor{wvwcorange}{HTML}{F05123}
 
-\usepackage{titlesec}
 \titleformat{name=\section}[block] {\bfseries\large} {} {0pt} {\colorsection} {}
 \titlespacing*{\section}{9bp}{9bp}{-9bp}	% {<cmd>}{<left>}{<before>}{<after>}[<right>]
 \titlespacing*{\subsection}{0.25in}{12pt}{6pt}
@@ -83,22 +167,11 @@
 % ===== %
 % The code below assumes that Arial is already installed on the system.
 % If not, then the uarial package will need to be setup separately.
-\usepackage{fontspec}
 \setmainfont{arial}
 
 % =========== %
 % PAGE LAYOUT %
 % =========== %
-\usepackage[%
-	top = 0.5in,
-	bottom = 0.5in,
-	left = 0.7in,
-	right = 0.7in,
-	includeheadfoot,
-	% showframe,
-]{geometry}
-
-\usepackage{fancyhdr}
 \pagestyle{fancy}
 
 % First page headfoot style.
@@ -120,16 +193,6 @@
 % Remaining page headfoot
 \fancyhf{}
 \fancyfoot[C]{\@course{} Syllabus, Page~\thepage}
-
-\usepackage{hyperref} % Load this after loading class to avoid conflict
-\hypersetup{%
-	colorlinks=true,
-	linkcolor=blue,
-	filecolor=magenta,
-	urlcolor=cyan,
-}
-
-\usepackage{booktabs}
 
 \setlength{\parindent}{0pt}
 
@@ -295,4 +358,46 @@
 
 		If you are in crisis after hours, call Campus Security at (304) 473-8011 or 988.
 	\end{adjustwidth}
+  }
 }
+
+\DeclareOption{default}{%
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{\baselineskip}
+
+  \pagestyle{fancy}
+  % First page headfoot style.
+  \fancypagestyle{firstpage}{%
+    \fancyhead[L]{\footnotesize\textit{\@course{}}}
+    \fancyhead[C]{\footnotesize\textit{\underline{\@coursetitle{}}}}
+    \fancyhead[R]{\footnotesize{\textit\@term{}}}
+  }
+  % \renewcommand{\headrulewidth}{.05in}
+  % \let\oldheadrule\headrule
+  % \renewcommand{\headrule}{\color{wvwcorange}\oldheadrule}
+  % \fancyfoot[C]{\@course{} Syllabus, Page~\thepage}
+
+  % Remaining page headfoot
+  \fancyhf{}
+  \fancyfoot[C]{Page \thepage\ of \ztotpages}
+
+  % \pagestyle{headandfoot}
+  % \firstpageheader{\footnotesize \textit{\@course{}}}{\footnotesize \textit{\underline{\@coursetitle{}}}}{\textit{\footnotesize \@term{}}}
+  % \footer{}{Page \thepage\ of \numpages}{}
+  % \extraheadheight[.5cm]{0cm}
+  % \extrafootheight[.5cm]{.5cm}
+
+  \AtBeginDocument{%
+    \thispagestyle{firstpage}
+    \begin{center}
+    \begin{tabularx}{\linewidth}{llXll}\toprule
+      \noindent \textbf{INSTRUCTOR:} & Jesse Oldroyd & &\textbf{EMAIL:}& \href{mailto:oldroyd.j@wvwc.edu}{\nolinkurl{oldroyd.j@wvwc.edu}} \\
+      \textbf{OFFICE:} &CHS 125 & & \textbf{OFFICE HOURS:} &\@officehours{} \\
+      \textbf{LECTURE:} & \@coursemeetings{}  && \textbf{CLASSROOM:} & \@courselocation{}\\\bottomrule
+    \end{tabularx}
+  \end{center}
+}
+}
+
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions\relax

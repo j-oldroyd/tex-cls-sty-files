@@ -362,6 +362,15 @@
 }
 
 \DeclareOption{default}{%
+	\newgeometry{%
+		top = 1in,
+		bottom = 1in,
+		left = 1in,
+		right = 1in,
+		includeheadfoot,
+		% headheight = 2.25in,
+	}
+
 	\setlength{\parindent}{0pt}
 	\setlength{\parskip}{\baselineskip}
 

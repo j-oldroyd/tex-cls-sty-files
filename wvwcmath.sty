@@ -1,9 +1,13 @@
 %% Provides basic packages/macros for lecture notes and exams/assignments.
 %% Lecture notes and assessments are currently set up to use math-jeo.cls.
-\def\fileversion{0.12}
-\def\filedate{2025/03/20}
+\def\fileversion{0.13}
+\def\filedate{2026/02/01}
 
 %% CHANGES
+%% Version 0.13
+% Replace cleverref with zref-clever to improve PDF tagging. Cleverref
+% redefines amsthm commands which interferes with current PDF tagging
+% processes, and zref-clever does not.
 %% Version 0.12
 % Remove physics package.
 
@@ -151,8 +155,8 @@
           urlcolor=blue, % url/email color
           linkcolor=magenta % interdocument link color
           }
-    % hyperref and cleveref are used for autoref to work the way I want it to.
-    \RequirePackage[capitalize,noabbrev]{cleveref}
+
+    \RequirePackage{zref-clever}
 
   % Get blank line between paragraphs.
     \RequirePackage[parfill]{parskip}
@@ -251,12 +255,6 @@
     \DeclareUSUnit\mile{mi}
     \DeclareUSUnit\foot{ft}
     \DeclareUSUnit\inch{in}
-
-  %% Settings for cleverref
-    \crefname{subsection}{Subsection}{Subsections}
-    % Allows custom label for inequalities. Intended to be used in equation environments.
-    \crefname{ineq}{Inequality}{Inequalities}
-    \creflabelformat{ineq}{#2{\upshape(#1)}#3}
 
   %% Theorem environments
     \newtheorem{theorem}{Theorem}[section]

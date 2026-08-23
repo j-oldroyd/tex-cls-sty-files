@@ -274,18 +274,14 @@ includeheadfoot,
 
 			\item Verbal warning: A more direct warning will be issued and documented.
 
-			\item Removal from class: The student may be asked to leave for the remainder of the
-			      session.
+			\item Removal from class: The student may be asked to leave for the remainder of the session.
 
 			\item Written notice: A written warning will outline expectations and next steps.
 
-			\item Meeting and escalation: Continued disruption will require a meeting with the instructor
-			      and may be referred to the department chair or the Office of Academic Affairs.
+			\item Meeting and escalation: Continued disruption will require a meeting with the instructor and may be referred to the department chair or the Office of Academic Affairs.
 		\end{enumerate}
 
-		Because the college is committed to safeguarding a respectful and inclusive learning
-		environment, some behaviors, such as discriminatory remarks or refusal to comply with
-		reasonable instructor requests may warrant a more immediate, formal response.
+		Because the college is committed to safeguarding a respectful and inclusive learning environment, some behaviors, such as discriminatory remarks or refusal to comply with reasonable instructor requests may warrant a more immediate, formal response.
 		In these cases, the instructor may move directly to higher-level consequences such as removal from class, written notice, or referral to a department chair or other office.
 	\end{adjustwidth}
 	\subsection*{Statement on Non-Discrimination and Title IX/ADA 504 Information}
@@ -416,6 +412,9 @@ Should you miss a class, \textit{it is your responsibility to cover any missed m
 \item Final exam: \@finalexamdate{}.
 \end{itemize}
 
+\section*{College Policies}
+Please refer to the \href{https://www.wvwc.edu/policies-student-handbook/}{WVWC Student Handbook} for more comprehensive information about institutional-level policies.
+
 \paragraph{ACADEMIC INTEGRITY:}\label{academic-integrity} I follow the academic integrity policy as stated in the current \href{https://www.wvwc.edu/wp-content/uploads/2023/08/Student-Handbook-Fall-2023.pdf}{WVWC Student Handbook}.
 The College considers academic dishonesty a serious offense as it diminishes the quality of scholarship and defrauds those who eventually depend upon our knowledge and integrity.
 The penalties for violating these standards are based on our firm belief in academic integrity.
@@ -435,16 +434,38 @@ Violations of academic integrity include but are not limited to the following:
 	This includes downloading papers from the Internet.
 \end{enumerate}
 
+\paragraph{CLASSROOM BEHAVIOR:} Students share responsibility for maintaining a respectful and inclusive learning environment that supports participation across diverse perspectives and lived experiences.
+		Disruptive behavior, including repeated tardiness, side conversations, misuse of technology, or conduct that limits others’ ability to engage, will be addressed through the following process:
+		\begin{enumerate}
+			\item Verbal reminder: The instructor will redirect the behavior during class.
+
+			\item Verbal warning: A more direct warning will be issued and documented.
+
+			\item Removal from class: The student may be asked to leave for the remainder of the session.
+
+			\item Written notice: A written warning will outline expectations and next steps.
+
+			\item Meeting and escalation: Continued disruption will require a meeting with the instructor and may be referred to the department chair or the Office of Academic Affairs.
+		\end{enumerate}
+
+		Because the college is committed to safeguarding a respectful and inclusive learning environment, some behaviors, such as discriminatory remarks or refusal to comply with reasonable instructor requests may warrant a more immediate, formal response.
+		In these cases, the instructor may move directly to higher-level consequences such as removal from class, written notice, or referral to a department chair or other office.
+
 \paragraph{NON-DISCRIMINATION AND AFFIRMATIVE ACTION:} West Virginia Wesleyan College does not discriminate on the basis of race, sex, color, national or ethnic origin, creed, ancestry, marital/family status, veteran status, sexual orientation, gender, gender identity, gender expression, pregnancy, religion, age, disability or blindness, or any other characteristic protected by local, state or federal law, to include Title VI, Title IX, Section 504, and the Age Discrimination Act, in the administration of its admission policies, scholarship and loan programs, educational programs, employment, athletic programs, co-curricular activities, or other College administered programs.
+WVWC’s nondiscrimination polices may be accessed at \url{https://www.wvwc.edu/title-ix/}
 For inquiries about the application of these laws in WVWC programs, or to file a report, contact the Title IX Coordinator at 59 College Ave, Buckhannon WV, \href{mailto:titleix@wvwc.edu}{\nolinkurl{titleix@wvwc.edu}}, or 304-621-1316.
 
 \paragraph{THE COLLEGE'S POLICY REGARDING STUDENTS WITH DISABILITIES:} West Virginia Wesleyan College ensures that no qualified person shall, by reason of a disability, be denied access to, excluded from participation in, or denied the benefits of any program or activity operated by the College or be subjected to discrimination under any of its programs or activities.
 The College shall make reasonable accommodations to the known limitations of an otherwise qualified student with a disability to enable the qualified student with the disability to have equal access to educational opportunities, programs and activities.
 Section 504 of the Rehabilitation Act of 1973 [29 U.S.C.\ 794(a)] and Americans with Disabilities Act of 1990 (ADA) [42 U.S.C.\ $\S$ 12101, et seq.].
 
-If you are a person with a disability and anticipate needing any type of accommodation in order to participate in this class, please advise me and make appropriate arrangements with the Director of the Learning Center as specified in our Student Handbook. (TEL: 304-473-8558).
+If you are a person with a disability and anticipate needing any type of accommodation in order to participate in this class, please advise me and make appropriate arrangements with the Director of the Learning Center as specified in our
+\href{https://www.wvwc.edu/policies-student-handbook/}{Student
+  Handbook}.
+(TEL: 304-473-8558).
 
-\paragraph{COLLEGE RESOURCES:} Please refer to the \href{https://www.wvwc.edu/students/academic-support/}{Academic Support Center} for more comprehensive information about institutional resources and support.
+\paragraph{COLLEGE RESOURCES:} Please refer to the \href{https://www.wvwc.edu/policies-student-handbook/}{Student Handbook} and the \href{https://www.wvwc.edu/students/academic-support/}{Academic Support Center} for more comprehensive information about institutional resources and support.
+
 \begin{itemize}
 	\item Student Success Center: The Student Success Center provides services designed to assist in the academic development of students.
       The staff encourages students to reach their full academic potential and provides resources to assist in the journey toward educational goals.

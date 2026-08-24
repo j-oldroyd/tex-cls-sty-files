@@ -19,8 +19,8 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.5.1}
-\def\filedate{2026/08/23}
+\def\fileversion{0.5.2}
+\def\filedate{2026/08/24}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wvwcsyllabus}[\filedate\space WVWC syllabus version \fileversion]
@@ -69,7 +69,12 @@
 \usepackage{tabularx}
 \usepackage{zref-totpages}
 \usepackage{termcal}
+
 % Calendar commands for schedule
+% Center calendars
+\usepackage{etoolbox}
+\patchcmd{\endcalendar}{[l]}{[c]}{}{}
+
 \newcommand{\MWFClass}{%
 	\calday[Monday]{\classday} % Monday
 	\skipday % Tuesday (no class)

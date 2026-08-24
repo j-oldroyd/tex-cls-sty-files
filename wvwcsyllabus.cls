@@ -388,7 +388,7 @@
 
 	% Remaining page headfoot
 	\fancyhf{}
-	\fancyhead[C]{\footnotesize\textit{DIFFERENTIAL EQUATIONS}}
+	\fancyhead[C]{\footnotesize\textit{\@coursetitle{}}}
 	\fancyfoot[C]{Page \thepage\ of \ztotpages}
 
 	% \pagestyle{headandfoot}

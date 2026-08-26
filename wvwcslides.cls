@@ -19,7 +19,7 @@
 % Buckhannon, WV 26201
 % oldroyd.j@wvwc.edu
 
-\def\fileversion{0.0.1}
+\def\fileversion{1.0.0}
 \def\filedate{2026/08/26}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -113,15 +113,18 @@ CharacterVariant={3, 6}, % varepsilon/varphi defaults
   frametitle bg=wvwcorange,
 }
 
+% Change section titles
+\hypersetup{linkcolor=wvwcorange}
+
 % Alert Block
 \setbeamercolor{block title alerted}{fg=wvwcorange,bg=lightorange}
 \setbeamercolor{block separator alerted}{bg=black}
 \setbeamercolor{block body alerted}{fg=black,bg=lightorange}
 
 % Example Block
-\setbeamercolor{block title example}{fg=wvwcorange,bg=lightorange}
+\setbeamercolor{block title example}{fg=black,bg=lightgray}
 \setbeamercolor{block separator example}{bg=black}
-\setbeamercolor{block body example}{fg=black,bg=lightorange}
+\setbeamercolor{block body example}{fg=black,bg=lightgray}
 
 % Itemize
 \setbeamercolor{item}{fg=wvwcorange}

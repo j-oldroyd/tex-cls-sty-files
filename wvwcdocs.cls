@@ -179,7 +179,6 @@
   % Load personal defaults
     \RequirePackage{wvwcmath}
     \usepackage[T1]{fontenc}
-    \RequirePackage{mlmodern}
 
   % Font settings for Palatino.
     % If these are loaded before amssymb it causes an error
@@ -193,6 +192,12 @@
     \ifbool{pfontXTX}{%
       \RequirePackage{newpxtext, newpxmath}
     }
+
+    % Fallback
+    \ifboolexpr{%
+      not ( bool {pfont} or bool {pfontXTX} )
+    }
+    {RequirePackage{mlmodern}}
 
 %==========================================%
 %           DOCUMENT INFORMATION           %

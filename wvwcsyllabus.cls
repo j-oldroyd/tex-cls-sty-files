@@ -163,11 +163,14 @@
 
 	\titleformat{name=\section}[block] {\bfseries\large} {} {0pt} {\colorsection} {}
 	\titlespacing*{\section}{9bp}{9bp}{-9bp}	% {<cmd>}{<left>}{<before>}{<after>}[<right>]
-	\titlespacing*{\subsection}{0.25in}{12pt}{6pt}
+  \titleformat{name=\subsection}[hang] {\bfseries\large} {} {0pt} {} {}
+	\titlespacing*{\subsection}{9bp}{12pt}{6pt}
+  \titleformat{name=\subsubsection}[block] {\bfseries\large} {} {0pt} {} {}
+	\titlespacing*{\subsubsection}{0bp}{12pt}{6pt}
 	\newcommand{\colorsection}[1]{%
 		\colorbox{headingorange}{%
 			% \parbox[][18bp][c]{\dimexpr\textwidth-2\fboxsep}{\hspace{9bp}#1\vphantom{27bp}}
-			\parbox[][18bp][c]{\dimexpr\textwidth-18bp}{\hspace{9bp}#1\vphantom{27bp}}
+			\parbox[][18bp][c]{\dimexpr\textwidth-18bp}{\hspace{0bp}#1\vphantom{27bp}}
 		}
 	}
 

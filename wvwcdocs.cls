@@ -197,7 +197,10 @@
     \ifboolexpr{%
       not ( bool {pfont} or bool {pfontXTX} )
     }
-    {RequirePackage{mlmodern}}
+    {%
+      \RequirePackage{mlmodern}
+      \RequirePackage{microtype}
+    }
 
 %==========================================%
 %           DOCUMENT INFORMATION           %

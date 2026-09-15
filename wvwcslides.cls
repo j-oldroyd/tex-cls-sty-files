@@ -26,7 +26,7 @@
 \ProvidesClass{wvwcslides}[\filedate\space WVWC syllabus version \fileversion]
 
 \LoadClass[%
-	hyperref={colorlinks, citecolor=blue}
+hyperref={colorlinks, citecolor=blue}
 ]{beamer}
 
 \usepackage{unicode-math}
@@ -43,27 +43,27 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{pythonstyle}{
-  backgroundcolor=\color{backcolour},
-  commentstyle=\color{codegreen},
-  keywordstyle=\color{magenta},
-  numberstyle=\tiny\color{codegray},
-  stringstyle=\color{codepurple},
-  basicstyle=\ttfamily\footnotesize,
-  breakatwhitespace=false,
-  breaklines=true,
-  captionpos=b,
-  keepspaces=true,
-  numbers=left,
-  numbersep=5pt,
-  showspaces=false,
-  showstringspaces=false,
-  showtabs=false,
-  tabsize=2
+backgroundcolor=\color{backcolour},
+commentstyle=\color{codegreen},
+keywordstyle=\color{magenta},
+numberstyle=\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\footnotesize,
+breakatwhitespace=false,
+breaklines=true,
+captionpos=b,
+keepspaces=true,
+numbers=left,
+numbersep=5pt,
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+tabsize=2
 }
 \lstset{%
-  language=python,
-  numbers=left,
-  style=pythonstyle,
+language=python,
+numbers=left,
+style=pythonstyle,
 }
 
 \newfontfamily\Raleway[Ligatures=TeX]{Raleway}
@@ -72,15 +72,15 @@
 \usefonttheme{professionalfonts}
 
 \setsansfont{Lato}[
-UprightFont=*-Regular,
-ItalicFont=*-Italic,
-BoldFont=*-Medium,
-BoldItalicFont=*-MediumItalic
-]
+        UprightFont=*-Regular,
+        ItalicFont=*-Italic,
+        BoldFont=*-Medium,
+        BoldItalicFont=*-MediumItalic
+    ]
 
 \setmathfont{Lete Sans Math}[
-CharacterVariant={3, 6}, % varepsilon/varphi defaults
-]
+        CharacterVariant={3, 6}, % varepsilon/varphi defaults
+    ]
 
 \setbeamercovered{transparent}
 % \setbeameroption{show notes on second screen=right}
@@ -102,15 +102,15 @@ CharacterVariant={3, 6}, % varepsilon/varphi defaults
 \definecolor{lightgray}{RGB}{240, 240, 240}
 
 \molochset{%
-  progressbar=foot,
-  block=fill,
+progressbar=foot,
+block=fill,
 }
 
 \molochcolors{%
-  title separator=wvwcorange,
-  progressbar bg=wvwcgray,
-  progressbar fg=wvwcorange,
-  frametitle bg=wvwcorange,
+title separator=wvwcorange,
+progressbar bg=wvwcgray,
+progressbar fg=wvwcorange,
+frametitle bg=wvwcorange,
 }
 
 % Change section titles
@@ -133,9 +133,9 @@ CharacterVariant={3, 6}, % varepsilon/varphi defaults
 \NewDocumentCommand{\pythonlang}{}{\textsf{Python}}
 
 \usepackage[%
-citestyle=numeric,
-sorting=none,
-natbib,
+citestyle=authoryear,
+% sorting=none,
+natbib=true,
 ]{biblatex}
 
 \titlegraphic{\hfill\includegraphics[width=3.5cm]{W_mountain-eps-converted-to.pdf}}

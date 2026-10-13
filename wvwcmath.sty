@@ -192,6 +192,18 @@
 \RequirePackage{%
     pst-poker,
 }
+
+% ============ %
+% ENVIRONMENTS %
+% ============ %
+\NewTblrEnviron{gradetbl}
+\SetTblrInner[gradetbl]{%
+    row{odd}={bg=azure9},
+    row{1}={bg=azure3,fg=white,font=\sffamily},
+    rowsep=2pt,
+    cell{2-Z}{1}={font=\sffamily}
+}
+
 %==========%
 %  MACROS  %
 %==========%

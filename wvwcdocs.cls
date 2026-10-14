@@ -45,75 +45,75 @@
 %==========================================%
 %           User provided inputs           %
 %==========================================%
-  % Adapated from discussion at https://tex.stackexchange.com/questions/97881/how-to-make-an-automatic-title-head-in-my-own-class-but-with-some-user-definable
-    \newcommand{\@course}{}
-    \newcommand{\course}[1]{\gdef\@course{#1}}
-    \newcommand{\@bookchapter}{}
-    \newcommand{\bookchapter}[1]{\gdef\@bookchapter{#1}}
-    \newcommand{\@chaptertopic}{}
-    \newcommand{\chaptertopic}[1]{\gdef\@chaptertopic{#1}}
-    \newcommand{\@name}{}
-    \newcommand{\name}[1]{\gdef\@name{#1}}
-    \newcommand{\@diarytype}{}
-    \newcommand{\diarytype}[1]{\gdef\@diarytype{#1}}
-    \newcommand{\@topic}{}
-    \newcommand{\topic}[1]{\gdef\@topic{#1}}
-    \newcommand{\@examnum}{}
-    \newcommand{\examnum}[1]{\gdef\@examnum{#1}}
-    \newcommand{\@examdate}{}
-    \newcommand{\examdate}[1]{\gdef\@examdate{#1}}
-  % provide error messages if document info commands haven't been defined in preamble
-    \newcommand{\mycls@headerror}{%
-        \ClassError{wvwcdocs}{This command must be in the preamble}{...}%
-    }
+% Adapated from discussion at https://tex.stackexchange.com/questions/97881/how-to-make-an-automatic-title-head-in-my-own-class-but-with-some-user-definable
+\newcommand{\@course}{}
+\newcommand{\course}[1]{\gdef\@course{#1}}
+\newcommand{\@bookchapter}{}
+\newcommand{\bookchapter}[1]{\gdef\@bookchapter{#1}}
+\newcommand{\@chaptertopic}{}
+\newcommand{\chaptertopic}[1]{\gdef\@chaptertopic{#1}}
+\newcommand{\@name}{}
+\newcommand{\name}[1]{\gdef\@name{#1}}
+\newcommand{\@diarytype}{}
+\newcommand{\diarytype}[1]{\gdef\@diarytype{#1}}
+\newcommand{\@topic}{}
+\newcommand{\topic}[1]{\gdef\@topic{#1}}
+\newcommand{\@examnum}{}
+\newcommand{\examnum}[1]{\gdef\@examnum{#1}}
+\newcommand{\@examdate}{}
+\newcommand{\examdate}[1]{\gdef\@examdate{#1}}
+% provide error messages if document info commands haven't been defined in preamble
+\newcommand{\mycls@headerror}{%
+    \ClassError{wvwcdocs}{This command must be in the preamble}{...}%
+}
 
 %===========================================%
 %           Specify class options           %
 %===========================================%
-  % Set a boolean variable to be true in order to use palatino fonts below.
-  % Requires etoolbox.
-    \DeclareOption{palatino}{
-      \booltrue{pfont}
-  }
+% Set a boolean variable to be true in order to use palatino fonts below.
+% Requires etoolbox.
+\DeclareOption{palatino}{
+    \booltrue{pfont}
+}
 
-  \DeclareOption{palatinoXTX}{%
+\DeclareOption{palatinoXTX}{%
     \booltrue{pfontXTX}
-  }
+}
 
-  % Used for lecture notes.
-  \DeclareOption{lecture}{%
+% Used for lecture notes.
+\DeclareOption{lecture}{%
     \AtBeginDocument{%
-      % These commands set up the running header on the top of the exam pages
-      \pagestyle{headandfoot}
-      \header{\textsc{\@course}}{\textsc{\@bookchapter}}{\textsc{\@chaptertopic}}
-      % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-      \headrule
-      \extraheadheight{.5cm}
-      % Check to see if document info commands are given after preamble
-      % Uses \mycls@headerror to provide error message
-      \let\course\mycls@headerror
-      \let\bookchapter\mycls@headerror
-      \let\chaptertopic\mycls@headerror
+        % These commands set up the running header on the top of the exam pages
+        \pagestyle{headandfoot}
+        \header{\textsc{\@course}}{\textsc{\@bookchapter}}{\textsc{\@chaptertopic}}
+        % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+        \headrule
+        \extraheadheight{.5cm}
+        % Check to see if document info commands are given after preamble
+        % Uses \mycls@headerror to provide error message
+        \let\course\mycls@headerror
+        \let\bookchapter\mycls@headerror
+        \let\chaptertopic\mycls@headerror
     }
-  }
-  % Used for research journals
-  \DeclareOption{diary}{%
+}
+% Used for research journals
+\DeclareOption{diary}{%
     \AtBeginDocument{%
-      % These commands set up the running header on the top of the exam pages
-      \pagestyle{headandfoot}
-      \header{\textsc{\@name}}{\textsc{\@diarytype}}{\textsc{\@topic}}
-      % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-      \headrule
-      \extraheadheight{.5cm}
-      % Check to see if document info commands are given after preamble
-      % Uses \mycls@headerror to provide error message
-      \let\name\mycls@headerror
-      \let\diarytype\mycls@headerror
-      \let\topic\mycls@headerror
+        % These commands set up the running header on the top of the exam pages
+        \pagestyle{headandfoot}
+        \header{\textsc{\@name}}{\textsc{\@diarytype}}{\textsc{\@topic}}
+        % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+        \headrule
+        \extraheadheight{.5cm}
+        % Check to see if document info commands are given after preamble
+        % Uses \mycls@headerror to provide error message
+        \let\name\mycls@headerror
+        \let\diarytype\mycls@headerror
+        \let\topic\mycls@headerror
     }
-  }
-  % Used for homework.
-  \DeclareOption{homework}{%
+}
+% Used for homework.
+\DeclareOption{homework}{%
     \PassOptionsToClass{addpoints}{exam}
     \AtBeginDocument{%
         \pagestyle{headandfoot}
@@ -137,9 +137,9 @@
         % Set point display for problems.
         \nopointsinmargin
     }
-  }
-  % Used for exams.
-  \DeclareOption{exam}{%
+}
+% Used for exams.
+\DeclareOption{exam}{%
     \PassOptionsToClass{addpoints}{exam}
     \AtBeginDocument{%
         \pagestyle{headandfoot}
@@ -165,10 +165,10 @@
         \marginbonuspointname{}
         \pointstwosided
     }
-  }
-  % Assume all other options are sent to exam class
-    \DeclareOption*{\PassOptionsToClass{\CurrentOption}{exam}}
-  \ProcessOptions\relax
+}
+% Assume all other options are sent to exam class
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{exam}}
+\ProcessOptions\relax
 
 % My setup for using exam class
 \LoadClass[twoside]{exam}
@@ -176,34 +176,34 @@
 %=========================%
 %  PACKAGES AND SETTINGS  %
 %=========================%
-  % Load personal defaults
-    \RequirePackage{wvwcmath}
-    \usepackage[T1]{fontenc}
+% Load personal defaults
+\RequirePackage{wvwcmath}
+\usepackage[T1]{fontenc}
 
-  % Font settings for Palatino.
-    % If these are loaded before amssymb it causes an error
-    % see: https://tex.stackexchange.com/questions/564490/command-bbbk-already-defined-ol-bbbk-mathordamsb7c-when-i-try-t
-    \ifbool{pfont}{%
-      \RequirePackage{newpxtext, newpxmath}
-      \RequirePackage[tracking=smallcaps,protrusion=true,expansion=false,verbose=silent]{microtype}
-    }
+% Font settings for Palatino.
+% If these are loaded before amssymb it causes an error
+% see: https://tex.stackexchange.com/questions/564490/command-bbbk-already-defined-ol-bbbk-mathordamsb7c-when-i-try-t
+\ifbool{pfont}{%
+    \RequirePackage{newpxtext, newpxmath}
+    \RequirePackage[tracking=smallcaps,protrusion=true,expansion=false,verbose=silent]{microtype}
+}
 
-    % We also need to ignore microtype if using XeLaTeX, so add an option for this.
-    \ifbool{pfontXTX}{%
-      \RequirePackage{newpxtext, newpxmath}
-    }
+% We also need to ignore microtype if using XeLaTeX, so add an option for this.
+\ifbool{pfontXTX}{%
+    \RequirePackage{newpxtext, newpxmath}
+}
 
-    % Fallback
-    \ifboolexpr{%
-      not ( bool {pfont} or bool {pfontXTX} )
-    }
-    {%
-      \RequirePackage{mlmodern}
-      \RequirePackage{microtype}
-    }
+% Fallback
+\ifboolexpr{%
+    not ( bool {pfont} or bool {pfontXTX} )
+}
+{%
+    \RequirePackage{mlmodern}
+    \RequirePackage{microtype}
+}
 
 %==========================================%
 %           DOCUMENT INFORMATION           %
 %==========================================%
-  % Only relevant for assessments
-  \nopointsinmargin
+% Only relevant for assessments
+\nopointsinmargin

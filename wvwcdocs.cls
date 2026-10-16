@@ -253,7 +253,27 @@
 		Refname={Example, Examples},
 	]
 
-	\newkeytheorem{solution}[qed=\( \triangle \)]
+	\newkeytheoremstyle{solution}{%
+		bodyfont=\normalfont,
+		headfont=\itshape,
+        headformat=\NAME,
+        headpunct=:,
+        tcolorbox-no-titlebar=
+        {
+          colback=white,
+          colframe=example-color,
+          boxrule=0.3mm,
+          arc=0.5mm,
+          left=1mm,
+          right=1mm,
+        },
+	}
+	\newkeytheorem{solution}[%
+		qed=\( \triangle \),
+		numbered=false,
+		style=solution,
+        name=Answer
+	]
 
 	\AtBeginDocument{%
 		% These commands set up the running header on the top of the exam pages

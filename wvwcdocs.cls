@@ -216,13 +216,13 @@
 		marginalia
 	}
 	\RequirePackage[most]{tcolorbox}
-	\definecolor{example-color}{HTML}{800000} % Red
-	\definecolor{definition-color}{HTML}{008000} % Green
-	\definecolor{theorem-color}{HTML}{000080} % Blue
+
+	\definecolor{example-color}{HTML}{008000} % Green
+	\definecolor{definition-color}{HTML}{000080} % Blue
+	\definecolor{theorem-color}{HTML}{800000} %
 
 	\renewkeytheoremstyle{plain}{%
-		tcolorbox={colback=green!5!white, colframe=green!50!black,
-				fonttitle=\bfseries,}
+		tcolorbox={colback=theorem-color!5!white, colframe=theorem-color, fonttitle=\bfseries,}
 	}
 	\renewkeytheorem{theorem}[%
 		style=plain,
@@ -232,7 +232,7 @@
 	]
 
 	\renewkeytheoremstyle{definition}{%
-		tcolorbox={colback=blue!5!white, colframe=blue!75!black, fonttitle=\bfseries},
+		tcolorbox={colback=definition-color!5!white, colframe=definition-color, fonttitle=\bfseries},
 		inherit-style=definition,
 	}
 	\renewkeytheorem{definition}[%

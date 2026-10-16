@@ -204,12 +204,11 @@
 
 % Marginalia settings
 \ifbool{lectureTF}{%
-	% ``no-text'' allows individual options to be set for XCharter as
-	% below.  Note that xcharter-otf loads unicode-math by default
-	\usepackage[no-text]{xcharter-otf}
-	\setmainfont{XCharter}[scaled=.98, sups, osf]
-	\setsansfont{cabin}[Scale=MatchLowercase, type1]
-	\setmonofont{Inconsolatazi4}[scaled=1.04]
+	% The otfmath option also loads fontspec and unicode-math.
+	% Therefore, this requires using lualatex.
+	\usepackage[otfmath, scaled=.98, sups, osf]{XCharter}
+	\setmathfont{XCharter-Math.otf}[CharacterVariant={3,6,13}]
+	\setmonofont{inconsolata.ttf}
 
 	\RequirePackage{%
 		fancyhdr,

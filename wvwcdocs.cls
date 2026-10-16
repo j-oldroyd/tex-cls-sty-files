@@ -65,7 +65,7 @@
 \newcommand{\examdate}[1]{\gdef\@examdate{#1}}
 % provide error messages if document info commands haven't been defined in preamble
 \newcommand{\mycls@headerror}{%
-    \ClassError{wvwcdocs}{This command must be in the preamble}{...}%
+	\ClassError{wvwcdocs}{This command must be in the preamble}{...}%
 }
 
 %===========================================%
@@ -78,88 +78,88 @@
 % Set a boolean variable to be true in order to use palatino fonts below.
 % Requires etoolbox.
 \DeclareOption{palatino}{
-    \booltrue{pfont}
+	\booltrue{pfont}
 }
 
 \DeclareOption{palatinoXTX}{%
-    \booltrue{pfontXTX}
+	\booltrue{pfontXTX}
 }
 
 % Used for lecture notes.
 \DeclareOption{lecture}{%
-    \booltrue{lectureTF}
-    \gdef\myclasstype{report}
+	\booltrue{lectureTF}
+	\gdef\myclasstype{report}
 }
 
 % Used for research journals
 \DeclareOption{diary}{%
-    \AtBeginDocument{%
-        % These commands set up the running header on the top of the exam pages
-        \pagestyle{headandfoot}
-        \header{\textsc{\@name}}{\textsc{\@diarytype}}{\textsc{\@topic}}
-        % \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-        \headrule
-        \extraheadheight{.5cm}
-        % Check to see if document info commands are given after preamble
-        % Uses \mycls@headerror to provide error message
-        \let\name\mycls@headerror
-        \let\diarytype\mycls@headerror
-        \let\topic\mycls@headerror
-    }
+	\AtBeginDocument{%
+		% These commands set up the running header on the top of the exam pages
+		\pagestyle{headandfoot}
+		\header{\textsc{\@name}}{\textsc{\@diarytype}}{\textsc{\@topic}}
+		% \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+		\headrule
+		\extraheadheight{.5cm}
+		% Check to see if document info commands are given after preamble
+		% Uses \mycls@headerror to provide error message
+		\let\name\mycls@headerror
+		\let\diarytype\mycls@headerror
+		\let\topic\mycls@headerror
+	}
 }
 % Used for homework.
 \DeclareOption{homework}{%
-    \PassOptionsToClass{addpoints, twoside}{exam}
-    \AtBeginDocument{%
-        \pagestyle{headandfoot}
-        % Allow horizontal rule under header for coverpage and main pages
-        \coverheadrule
-        \headrule
-        % These commands set up the header for the cover page(s)
-        \coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
-        % \firstpageheadrule
-        % These commands set up the running header on the top of the main exam pages
-        % Headers and footers make use of \oddeven to get page number to appear on outside of page
-        \header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
-        % Clear footer
-        \footer{}{}{}
-        \extraheadheight{.5cm}
-        % Check to see if document info commands are given after preamble
-        % Uses \mycls@headerror to provide error message
-        \let\course\mycls@headerror
-        \let\examnum\mycls@headerror
-        \let\examdate\mycls@headerror
-        % Set point display for problems.
-        \nopointsinmargin
-    }
+	\PassOptionsToClass{addpoints, twoside}{exam}
+	\AtBeginDocument{%
+		\pagestyle{headandfoot}
+		% Allow horizontal rule under header for coverpage and main pages
+		\coverheadrule
+		\headrule
+		% These commands set up the header for the cover page(s)
+		\coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
+		% \firstpageheadrule
+		% These commands set up the running header on the top of the main exam pages
+		% Headers and footers make use of \oddeven to get page number to appear on outside of page
+		\header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
+		% Clear footer
+		\footer{}{}{}
+		\extraheadheight{.5cm}
+		% Check to see if document info commands are given after preamble
+		% Uses \mycls@headerror to provide error message
+		\let\course\mycls@headerror
+		\let\examnum\mycls@headerror
+		\let\examdate\mycls@headerror
+		% Set point display for problems.
+		\nopointsinmargin
+	}
 }
 % Used for exams.
 \DeclareOption{exam}{%
-    \PassOptionsToClass{addpoints, twoside}{exam}
-    \AtBeginDocument{%
-        \pagestyle{headandfoot}
-        % Allow horizontal rule under header for coverpage and main pages
-        \coverheadrule
-        \headrule
-        % These commands set up the header for the cover page(s)
-        \coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
-        % \firstpageheadrule
-        % These commands set up the running header on the top of the main exam pages
-        % Headers and footers make use of \oddeven to get page number and point box to appear on outside of page
-        \header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
-        \footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
-        \extraheadheight{.5cm}
-        % Check to see if document info commands are given after preamble
-        % Uses \mycls@headerror to provide error message
-        \let\course\mycls@headerror
-        \let\examnum\mycls@headerror
-        \let\examdate\mycls@headerror
-        % Set points.
-        \marginpointname{}
-        \pointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints}}}
-        \marginbonuspointname{}
-        \pointstwosided
-    }
+	\PassOptionsToClass{addpoints, twoside}{exam}
+	\AtBeginDocument{%
+		\pagestyle{headandfoot}
+		% Allow horizontal rule under header for coverpage and main pages
+		\coverheadrule
+		\headrule
+		% These commands set up the header for the cover page(s)
+		\coverheader{\textsc{\@course}}{\textsc{\@examnum}}{\textsc{\@examdate}}
+		% \firstpageheadrule
+		% These commands set up the running header on the top of the main exam pages
+		% Headers and footers make use of \oddeven to get page number and point box to appear on outside of page
+		\header{\oddeven{\textsc{\@examnum}}{\textsc{Page \thepage\ of \numpages}}}{}{\oddeven{\textsc{Page \thepage\ of \numpages}}{\textsc{\@examnum}}}
+		\footer{\oddeven{}{\pointbox}}{}{\oddeven{\pointbox}{}}
+		\extraheadheight{.5cm}
+		% Check to see if document info commands are given after preamble
+		% Uses \mycls@headerror to provide error message
+		\let\course\mycls@headerror
+		\let\examnum\mycls@headerror
+		\let\examdate\mycls@headerror
+		% Set points.
+		\marginpointname{}
+		\pointformat{\fbox{\phantom{$ \sum $}/{\scriptsize \themarginpoints}}}
+		\marginbonuspointname{}
+		\pointstwosided
+	}
 }
 
 % Assume all other options are sent to class
@@ -180,101 +180,108 @@
 % If these are loaded before amssymb it causes an error
 % see: https://tex.stackexchange.com/questions/564490/command-bbbk-already-defined-ol-bbbk-mathordamsb7c-when-i-try-t
 \ifbool{pfont}{%
-    \RequirePackage{newpxtext, newpxmath}
-    \RequirePackage[%
-        tracking=smallcaps,
-        protrusion=true,
-        expansion=false,
-        verbose=silent]{microtype}
+	\RequirePackage{newpxtext, newpxmath}
+	\RequirePackage[%
+		tracking=smallcaps,
+		protrusion=true,
+		expansion=false,
+		verbose=silent]{microtype}
 }
 
 % We also need to ignore microtype if using XeLaTeX, so add an option for this.
 \ifbool{pfontXTX}{%
-    \RequirePackage{newpxtext, newpxmath}
+	\RequirePackage{newpxtext, newpxmath}
 }
 
 % Fallback
 \ifboolexpr{%
-    not ( bool {pfont} or bool {pfontXTX} )
+	not ( bool {pfont} or bool {pfontXTX} )
 }
 {%
-    \RequirePackage{mlmodern}
-    \RequirePackage{microtype}
+	\RequirePackage{mlmodern}
+	\RequirePackage{microtype}
 }
 
 % Marginalia settings
 \ifbool{lectureTF}{%
-    \RequirePackage{%
-        fancyhdr,
-        keytheorems,
-        marginalia
-    }
-    \RequirePackage[most]{tcolorbox}
-    \definecolor{example-color}{HTML}{800000} % Red
-    \definecolor{definition-color}{HTML}{008000} % Green
-    \definecolor{theorem-color}{HTML}{000080} % Blue
+	% ``no-text'' allows individual options to be set for XCharter as
+	% below.  Note that xcharter-otf loads unicode-math by default
+	\usepackage[no-text]{xcharter-otf}
+	\setmainfont{XCharter}[scaled=.98, sups, osf]
+	\setsansfont{cabin}[Scale=MatchLowercase, type1]
+	\setmonofont{Inconsolatazi4}[scaled=1.04]
 
-    \renewkeytheoremstyle{plain}{%
-        tcolorbox={colback=green!5!white, colframe=green!50!black,
-                fonttitle=\bfseries,}
-    }
-    \renewkeytheorem{theorem}[%
-        style=plain,
-        parent=section,
-        refname={Theorem, Theorems},
-        Refname={Theorem, Theorems}
-    ]
+	\RequirePackage{%
+		fancyhdr,
+		keytheorems,
+		marginalia
+	}
+	\RequirePackage[most]{tcolorbox}
+	\definecolor{example-color}{HTML}{800000} % Red
+	\definecolor{definition-color}{HTML}{008000} % Green
+	\definecolor{theorem-color}{HTML}{000080} % Blue
 
-    \renewkeytheoremstyle{definition}{%
-        tcolorbox={colback=blue!5!white, colframe=blue!75!black, fonttitle=\bfseries},
-        inherit-style=definition,
-    }
-    \renewkeytheorem{definition}[%
-        style=definition,
-        sibling=theorem,
-        refname={Definition, Definitions},
-        Refname={Definition, Definitions},
-    ]
+	\renewkeytheoremstyle{plain}{%
+		tcolorbox={colback=green!5!white, colframe=green!50!black,
+				fonttitle=\bfseries,}
+	}
+	\renewkeytheorem{theorem}[%
+		style=plain,
+		parent=section,
+		refname={Theorem, Theorems},
+		Refname={Theorem, Theorems}
+	]
 
-    \newkeytheoremstyle{example}{%
-        tcolorbox={colback=example-color!5!white, colframe=example-color!75!black, fonttitle=\bfseries},
-        bodyfont=\normalfont,
-    }
-    \renewkeytheorem{example}[%
-        style=example,
-        sibling=definition,
-        refname={Example, Examples},
-        Refname={Example, Examples},
-    ]
+	\renewkeytheoremstyle{definition}{%
+		tcolorbox={colback=blue!5!white, colframe=blue!75!black, fonttitle=\bfseries},
+		inherit-style=definition,
+	}
+	\renewkeytheorem{definition}[%
+		style=definition,
+		sibling=theorem,
+		refname={Definition, Definitions},
+		Refname={Definition, Definitions},
+	]
 
-    \newkeytheorem{solution}[qed=\( \triangle \)]
+	\newkeytheoremstyle{example}{%
+		tcolorbox={colback=example-color!5!white, colframe=example-color!75!black, fonttitle=\bfseries},
+		bodyfont=\normalfont,
+	}
+	\renewkeytheorem{example}[%
+		style=example,
+		sibling=definition,
+		refname={Example, Examples},
+		Refname={Example, Examples},
+	]
 
-    \AtBeginDocument{%
-        % These commands set up the running header on the top of the exam pages
-        % \fancypagestyle{head}{%
-        %     \fancyhead[L]{\textsc{\@course}}
-        %     \fancyhead[C]{\textsc{\@bookchapter}}
-        %     \fancyhead[R]{\textsc{\@chaptertopic}}
-        % }
-        % \pagestyle{head}
-        \pagestyle{fancy}
-        \fancyhead[LE]{\leftmark}
-        \fancyhead[RE]{\rightmark}
-        \fancyfoot[LE,RO]{\thepage}
+	\newkeytheorem{solution}[qed=\( \triangle \)]
 
-        \listofkeytheorems[%
-            ignoreall,
-            numwidth=3em,
-            show={theorem, definition},
-            title={List of key results and definitions}
-        ]
+	\AtBeginDocument{%
+		% These commands set up the running header on the top of the exam pages
+		% \fancypagestyle{head}{%
+		%     \fancyhead[L]{\textsc{\@course}}
+		%     \fancyhead[C]{\textsc{\@bookchapter}}
+		%     \fancyhead[R]{\textsc{\@chaptertopic}}
+		% }
+		% \pagestyle{head}
+		\pagestyle{fancy}
+		\fancyhead[LE]{\leftmark}
+		\fancyhead[RE]{\rightmark}
+		\fancyfoot[LE,RO]{\thepage}
 
-        % Check to see if document info commands are given after preamble
-        % Uses \mycls@headerror to provide error message
-        \let\course\mycls@headerror
-        \let\bookchapter\mycls@headerror
-        \let\chaptertopic\mycls@headerror
-    }
+		\listofkeytheorems[%
+			ignoreall,
+			numwidth=3em,
+			show={theorem, definition},
+			title={List of key results and definitions}
+		]
+
+		% Check to see if document info commands are given after preamble
+		% Uses \mycls@headerror to provide error message
+		\let\course\mycls@headerror
+		\let\bookchapter\mycls@headerror
+		\let\chaptertopic\mycls@headerror
+	}
 }
 
 %==========================================%
